@@ -3,6 +3,8 @@
   "version": 2,
   "projects": {
     "blogsite": "apps/blogsite",
-    "blogsite-e2e": "apps/blogsite-e2e"
+    "blogsite-e2e": "apps/blogsite-e2e",
+    "eldari": "apps/eldari",
+    "eldari-e2e": "apps/eldari-e2e"
   }
 }
