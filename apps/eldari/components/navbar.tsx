@@ -1,9 +1,13 @@
+import Image from "next/image";
+
 const NavBar = () => {
 
   return (
     <div className="shadow bg-white">
       <div className="h-16 mx-auto px-5 flex items-center justify-between">
-          <a className="text-2xl hover:text-cyan-500 transition-colors cursor-pointer">Logo</a>
+          <a className="text-2xl hover:text-cyan-500 transition-colors cursor-pointer">
+          <Image src='/icons/favicon_io/favicon-32x32.png' height='32px' width='32px' alt='github icon'/>
+          </a>
           
           <ul className="flex items-center gap-5">
             <li><a className="hover:text-cyan-500 transition-colors" href="">Link 1</a></li>
