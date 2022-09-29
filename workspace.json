@@ -2,6 +2,8 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "aboutme": "apps/aboutme",
+    "aboutme-e2e": "apps/aboutme-e2e",
     "blogsite": "apps/blogsite",
     "blogsite-e2e": "apps/blogsite-e2e",
     "eldari": "apps/eldari",
