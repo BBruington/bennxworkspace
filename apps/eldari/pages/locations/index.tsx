@@ -1,5 +1,5 @@
 import styles from './index.module.css';
-import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 
 
@@ -23,12 +23,6 @@ export interface IndexProps {}
     ]
 
 export function Index(props: IndexProps) {
-
-  const router = useRouter();
-  const handleToLocation = (e) => {
-    e.preventDefault();
-    router.push(`/locations/${e.innerHTML}`);
-  }
 
   return (
     <>
@@ -54,7 +48,9 @@ export function Index(props: IndexProps) {
                 {features.map((feature) => (
                   <div key={feature.name} className="relative">
                   <dt>
-                  <a className='cursor-pointer ml-9 text-lg text-center font-medium leading-6 text-gray-900' onClick={handleToLocation}>{feature.name}</a>
+                    <Link href={`/locations/${feature.name}`}>
+                      <a className='cursor-pointer ml-9 text-lg text-center font-medium leading-6 text-gray-900'>{feature.name}</a>
+                    </Link>
                   </dt>
                   <dd className="mt-2 ml-9 text-base text-gray-500">{feature.description}</dd>
                 </div>

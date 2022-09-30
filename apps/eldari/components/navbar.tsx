@@ -1,22 +1,19 @@
 import Image from "next/image";
 import { useRouter } from 'next/router'
+import Link from "next/link";
 
 const NavBar = () => {
 
-  const router = useRouter();
+  const pageLinks = [
+    {name: 'Locations'},
+    {name: 'Deities'},
+    {name: 'Factions'},
+    {name: 'Link 4'},
+    {name: 'Link 5'},
+  ]
 
-  const handleOnClickLocations = (e) => {
-    e.preventDefault();
-    router.push('/locations');
-  };
-  const handleOnClickDeities = (e) => {
-    e.preventDefault();
-    router.push('/deities');
-  };
-  const handleOnClickFactions = (e) => {
-    e.preventDefault();
-    router.push('/factions');
-  };
+  const router = useRouter();
+  
   const handleOnClickHome = (e) => {
     e.preventDefault();
     router.push('/');
@@ -30,11 +27,13 @@ const NavBar = () => {
           </a>
           
           <ul className="flex items-center gap-5">
-            <li><a className="hover:text-cyan-500 transition-colors cursor-pointer" onClick={handleOnClickLocations}>Locations</a></li>
-            <li><a className="hover:text-cyan-500 transition-colors cursor-pointer" onClick={handleOnClickDeities}>Deities</a></li>
-            <li><a className="hover:text-cyan-500 transition-colors cursor-pointer" onClick={handleOnClickFactions}>Factions</a></li>
-            <li><a className="hover:text-cyan-500 transition-colors cursor-pointer" href="">Link 4</a></li>
-            <li><a className="hover:text-cyan-500 transition-colors cursor-pointer" href="">Link 5</a></li>
+          {pageLinks.map((links) => ( 
+            <li key={links.name}>
+              <Link href={`${links.name.toLowerCase()}`}>
+                <a className="hover:text-cyan-500 transition-colors cursor-pointer">{links.name}</a>
+              </Link>
+            </li>
+          ))}            
           </ul>
       </div>
     </div>
