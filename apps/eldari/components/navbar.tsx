@@ -5,9 +5,9 @@ const NavBar = () => {
 
   const router = useRouter();
 
-  const handleOnClickCountries = (e) => {
+  const handleOnClickLocations = (e) => {
     e.preventDefault();
-    router.push('/countries');
+    router.push('/locations');
   };
   const handleOnClickDeities = (e) => {
     e.preventDefault();
@@ -30,7 +30,7 @@ const NavBar = () => {
           </a>
           
           <ul className="flex items-center gap-5">
-            <li><a className="hover:text-cyan-500 transition-colors cursor-pointer" onClick={handleOnClickCountries}>Countries</a></li>
+            <li><a className="hover:text-cyan-500 transition-colors cursor-pointer" onClick={handleOnClickLocations}>Locations</a></li>
             <li><a className="hover:text-cyan-500 transition-colors cursor-pointer" onClick={handleOnClickDeities}>Deities</a></li>
             <li><a className="hover:text-cyan-500 transition-colors cursor-pointer" onClick={handleOnClickFactions}>Factions</a></li>
             <li><a className="hover:text-cyan-500 transition-colors cursor-pointer" href="">Link 4</a></li>
