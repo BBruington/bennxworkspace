@@ -7,6 +7,8 @@
     "blogsite": "apps/blogsite",
     "blogsite-e2e": "apps/blogsite-e2e",
     "eldari": "apps/eldari",
-    "eldari-e2e": "apps/eldari-e2e"
+    "eldari-e2e": "apps/eldari-e2e",
+    "shared-ui": "libs/shared/ui",
+    "storybook-e2e-ui-e2e": "apps/storybook-e2e/ui-e2e"
   }
 }
