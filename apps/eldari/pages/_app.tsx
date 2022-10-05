@@ -1,5 +1,6 @@
 import { AppProps } from 'next/app';
 import NavBar from '../components/navbar';
+import Footer from '../components/footer';
 import Head from 'next/head';
 import './styles.css';
 
@@ -16,6 +17,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
       <main className="app">
         <NavBar />
         <Component {...pageProps} />
+        <Footer />
       </main>
     </>
   );

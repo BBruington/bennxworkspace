@@ -1,0 +1,62 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/practice/reactauth",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "root": "apps/practice/reactauth",
+        "outputPath": "dist/apps/practice/reactauth"
+      },
+      "configurations": {
+        "development": {
+          "outputPath": "apps/practice/reactauth"
+        },
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/next:server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "practice-reactauth:build",
+        "dev": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "practice-reactauth:build:development",
+          "dev": true
+        },
+        "production": {
+          "buildTarget": "practice-reactauth:build:production",
+          "dev": false
+        }
+      }
+    },
+    "export": {
+      "executor": "@nrwl/next:export",
+      "options": {
+        "buildTarget": "practice-reactauth:build:production"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/practice/reactauth"],
+      "options": {
+        "jestConfig": "apps/practice/reactauth/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/practice/reactauth/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  },
+  "tags": []
+}
