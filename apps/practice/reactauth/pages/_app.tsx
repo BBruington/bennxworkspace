@@ -1,4 +1,5 @@
 import { AppProps } from 'next/app';
+import Layout from '../components/layout';
 import Head from 'next/head';
 import './styles.css';
 
@@ -9,7 +10,9 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <title>Welcome to reactauth!</title>
       </Head>
       <main className="app">
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </main>
     </>
   );

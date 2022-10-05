@@ -7,13 +7,10 @@ export function Index() {
    * Note: The corresponding styles are in the ./index.css file.
    */
   return (
-    <div>
-      <Head>
-        <title>Create Next App</title>
-        <meta name='description'></meta>
-      </Head>
+    <div>      
       <main>
-
+        <h2 className='text-2xl'>Upgrade your web development today</h2>
+        <h3>Learn web developmentusing the latest tech</h3>
       </main>
     </div>
   );
