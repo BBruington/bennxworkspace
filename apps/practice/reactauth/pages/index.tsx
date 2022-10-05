@@ -9,7 +9,7 @@ export function Index() {
   return (
     <div>      
       <main>
-        <h2 className='text-2xl'>Upgrade your web development today</h2>
+        <h2 className='text-2xl mt-10'>Upgrade your web development today</h2>
         <h3>Learn web developmentusing the latest tech</h3>
       </main>
     </div>
