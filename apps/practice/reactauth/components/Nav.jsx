@@ -4,6 +4,7 @@ import { auth } from "../../../../libs/firebase/firebase";
 
 export default function Nav({children}){
 
+  //how to use active user information
   const [user, loading] = useAuthState(auth);
 
   return(
@@ -18,7 +19,11 @@ export default function Nav({children}){
         {user && (
           <div>
             <Link href={'/dashboard'}>
-              <img src={user.photoURL} alt="user image" />
+              <img 
+              src={user.photoURL} 
+              alt="user image"
+              referrerPolicy="no-referrer"
+              className="w-12 rounded-full" />
             </Link>
           </div>
         )}
