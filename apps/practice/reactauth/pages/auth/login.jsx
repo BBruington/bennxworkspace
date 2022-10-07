@@ -1,11 +1,14 @@
 import { FcGoogle } from 'react-icons/fc';
 import { AiFillFacebook } from 'react-icons/ai';
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { GoogleAuthProvider, signInWithPopup, FacebookAuthProvider, updateProfile } from 'firebase/auth';
 import { auth } from '../../../../../libs/firebase/firebase';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 export default function Login(){
+
+  const [user, loading] = useAuthState(auth);
 
   const router = useRouter();
 
@@ -14,13 +17,26 @@ export default function Login(){
   const GoogleLogin = async () => {
     try {
       const result = await signInWithPopup(auth, googleProvider)
-      console.log(result.user)
       router.push("/dashboard");
     } catch (e) {
       console.error(e)
     }
   }
 
+  //Sign in with Facebook
+  // const fbProvider = new FacebookAuthProvider();
+  // const FacebookProvider = async () => {
+  //   try {
+  //     const result = await signInWithPopup(auth, fbProvider);
+  //   } catch (e) { console.error(e) }
+  // }
+
+
+  useEffect(() => {
+    if (user) {
+      router.push('/dashboard')
+    }else { console.log('login')}
+  },[user])
 
   return (
     <div className='shadow-xl mt-32 p-10 text-gray-700 rounded-lg'>
@@ -32,9 +48,9 @@ export default function Login(){
         <button onClick={GoogleLogin} className='text-white bg-gray-700 p-4 w-full font-medium rounded-lg flex align-middle gap-2'>
           <FcGoogle className='text-2xl' />Sign in with Google
         </button>
-        <button className='text-white bg-gray-700 p-4 w-full font-medium rounded-lg flex align-middle gap-2'>
+        {/* <button className='text-white bg-gray-700 p-4 w-full font-medium rounded-lg flex align-middle gap-2'>
           <AiFillFacebook className='text-2xl text-blue-400' /> Sign in with Facebook
-        </button>
+        </button> */}
       </div>
     </div>
   )

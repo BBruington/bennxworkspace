@@ -8,8 +8,8 @@ const NavBar = () => {
     {name: 'Locations'},
     {name: 'Deities'},
     {name: 'Factions'},
-    {name: 'Link 4'},
-    {name: 'Link 5'},
+    {name: 'Sessions'},
+    {name: 'NPCS'},
   ]
 
   const router = useRouter();
