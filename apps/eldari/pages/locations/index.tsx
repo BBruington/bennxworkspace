@@ -2,6 +2,7 @@ import styles from './index.module.css';
 import Link from 'next/link';
 import LocationsSideBar from 'apps/eldari/components/locationssidebar';
 
+  
 
 /* eslint-disable-next-line */
 export interface IndexProps {}

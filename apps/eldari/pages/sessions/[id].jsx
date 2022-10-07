@@ -1,12 +1,8 @@
+import sessions from '../../data/sessions.json'
 
-
-export const sessionsNum = [
-  { id: 1, },
-  { id: 2, },
-]
 export async function getStaticProps(staticProps) {
   const params = staticProps.params;
-  const findSessionNumById = sessionsNum.find((session) => {
+  const findSessionNumById = sessions.items.find((session) => {
     return (
       session.id.toString() === params.id //dynamic id
     )
@@ -14,17 +10,16 @@ export async function getStaticProps(staticProps) {
 
   return {
     props: {
-      sessionsNum: findSessionNumById ? findSessionNumById : {},
+      sessions: findSessionNumById ? findSessionNumById : {},
     },
   };
 }
 
 export async function getStaticPaths() {
-//    const coffeeStores = await fetchCoffeeStores();
 
-  // i can prerender all of the coffeestores by mapping
+  // i can prerender all of the sessions by mapping
   // them out and finding the id
-  const paths = sessionsNum.map( (session) => {
+  const paths = sessions.items.map( (session) => {
     return {
       params: {
         id: session.id.toString(),
@@ -43,13 +38,13 @@ export async function getStaticPaths() {
   };
 }
 
-export default function sessionNum() {
+export default function sessionNum({sessions}) {
 
   
 
   return (
     <div>
-
+      welcome to session {sessions.id}!
     </div>
   )
 }

@@ -1,0 +1,7 @@
+{
+  "items": [
+    { "id": 1, "description": "session 1" },
+    { "id": 2, "description": "session 2" },
+    { "id": 3, "description": "session 3" }
+  ]
+}

@@ -29,7 +29,7 @@ const NavBar = () => {
           <ul className="flex items-center gap-5">
           {pageLinks.map((links) => ( 
             <li key={links.name}>
-              <Link href={`${links.name.toLowerCase()}`}>
+              <Link href={`/${links.name.toLowerCase()}`}>
                 <a className="hover:text-cyan-500 transition-colors cursor-pointer">{links.name}</a>
               </Link>
             </li>
