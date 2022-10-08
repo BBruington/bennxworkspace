@@ -1,7 +1,7 @@
 {
-  "items": [
-    { "id": 1, "description": "session 1" },
-    { "id": 2, "description": "session 2" },
-    { "id": 3, "description": "session 3" }
+  "session": [
+    { "id": 1, "description": "description 1", "intro": "intro 1", "tittle": "Something's Bugging Me" },
+    { "id": 2, "description": "description 2", "intro": "intro 2", "tittle": "Welcome to Lorn" },
+    { "id": 3, "description": "description 3", "intro": "intro 3", "tittle": "Something's Buggy" }
   ]
 }
