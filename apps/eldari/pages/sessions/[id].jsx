@@ -55,6 +55,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
+
 export default function SessionInfo() {
 
   return (
@@ -108,7 +109,10 @@ export default function SessionInfo() {
             <main className="relative z-0 flex-1 overflow-y-auto focus:outline-none xl:order-last">
               {/* Start main area*/}
               <div className="absolute inset-0 py-6 px-4 sm:px-6 lg:px-8">
-                <div className="h-full rounded-lg border-2 border-dashed border-gray-200" />
+                <h2>{sessions.session.intro}</h2>
+                <div className="h-full rounded-lg border-2 border-dashed border-gray-200"> 
+                  <div>here is text</div>
+                </div>
               </div>
               {/* End main area */}
             </main>
