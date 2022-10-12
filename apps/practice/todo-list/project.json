@@ -1,0 +1,60 @@
+{
+  "name": "practice-todo-list",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/practice/todo-list/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/practice/todo-list",
+        "main": "apps/practice/todo-list/src/main.ts",
+        "tsConfig": "apps/practice/todo-list/tsconfig.app.json",
+        "assets": ["apps/practice/todo-list/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/practice/todo-list/src/environments/environment.ts",
+              "with": "apps/practice/todo-list/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/js:node",
+      "options": {
+        "buildTarget": "practice-todo-list:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "practice-todo-list:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/practice/todo-list/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/practice/todo-list"],
+      "options": {
+        "jestConfig": "apps/practice/todo-list/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

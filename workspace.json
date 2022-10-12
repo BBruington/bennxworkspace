@@ -10,6 +10,7 @@
     "eldari-e2e": "apps/eldari-e2e",
     "practice-reactauth": "apps/practice/reactauth",
     "practice-reactauth-e2e": "apps/practice/reactauth-e2e",
+    "practice-todo-list": "apps/practice/todo-list",
     "shared-ui": "libs/shared/ui",
     "storybook-e2e-ui-e2e": "apps/storybook-e2e/ui-e2e",
     "web-app": "apps/web-app",
