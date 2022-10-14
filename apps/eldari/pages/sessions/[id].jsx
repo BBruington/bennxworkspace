@@ -16,8 +16,7 @@ export async function getStaticProps(staticProps) {
 
   return {
     props: {
-      sessions: findSessionNumById ? findSessionNumById : {},
-    
+      sessions: findSessionNumById ? findSessionNumById : {},    
     },
   };
 }
@@ -114,7 +113,7 @@ export default function SessionInfo({sessions}) {
               <div className="absolute inset-0 py-6 px-4 sm:px-6 lg:px-8">
                 <h2>{intro}</h2>
                 <div className="h-full rounded-lg border-2 border-dashed border-gray-200"> 
-                  <div>here is text {tittle}</div>
+                  <div>the tittle of the session was {tittle}</div>
                 </div>
               </div>
               {/* End main area */}
