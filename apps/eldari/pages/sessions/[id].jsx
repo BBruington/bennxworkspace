@@ -1,10 +1,9 @@
-import { Fragment, useState } from 'react'
 import {
   CalendarIcon,
   HomeIcon,
   UserGroupIcon,
-} from '@heroicons/react/24/outline'
-import sessions from '../../data/sessions.json'
+} from '@heroicons/react/24/outline';
+import sessions from '../../data/sessions.json';
 
 export async function getStaticProps(staticProps) {
   const params = staticProps.params;
@@ -46,7 +45,7 @@ export async function getStaticPaths() {
 
 
 const navigation = [
-  { name: 'Combat', href: '#', icon: HomeIcon, current: true },
+  { name: 'Combat', href: '#', icon: HomeIcon, current: false },
   { name: 'RolePlay', href: '#', icon: CalendarIcon, current: false },
   { name: 'NPCS', href: '#', icon: UserGroupIcon, current: false },
 ]
@@ -58,7 +57,8 @@ function classNames(...classes) {
 
 export default function SessionInfo({sessions}) {
 
-  const {tittle, intro} = sessions;
+  const {tittle, intro, description} = sessions;
+  const { combat, npcs, roleplay } = sessions.specs;
 
   return (
     <>
@@ -111,9 +111,10 @@ export default function SessionInfo({sessions}) {
             <main className="relative z-0 flex-1 overflow-y-auto focus:outline-none xl:order-last">
               {/* Start main area*/}
               <div className="absolute inset-0 py-6 px-4 sm:px-6 lg:px-8">
-                <h2>{intro}</h2>
+                <h2>{tittle}</h2>
+                <div>{intro}</div>
                 <div className="h-full rounded-lg border-2 border-dashed border-gray-200"> 
-                  <div>the tittle of the session was {tittle}</div>
+                  <div>{description}</div>
                 </div>
               </div>
               {/* End main area */}
