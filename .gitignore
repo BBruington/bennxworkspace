@@ -57,3 +57,4 @@ libs/prisma-client/src/runtime/index-browser.d.ts
 libs/prisma-client/src/runtime/index-browser.js
 libs/prisma-client/src/runtime/index.d.ts
 libs/prisma-client/src/runtime/index.js
+.env

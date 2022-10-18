@@ -1,6 +1,9 @@
 {
   "session": [
-    { "id": 1, "description": "description 1", "intro": "intro 1", "tittle": "Something's Bugging Me", 
+    { "id": 1, 
+    "description": "Session 1 begins in a chained wagon. The party wakes up inside among each other and their new warden; a apathetic kobold named Scrapper. He explains their situation of becoming prisoners tasked with taking on jobs from their new lord: Silver Eye Lumin Eos. And to gauge the party's worth, Scrapper has them freed to take on an assault from strange ant-like creatures equiped with acid and mandibles. By the end of the fight, the party narrowly wins but at the cost of one of them: Grifith going unconscious and becoming possesed by a fiendish black blade. Scrapper manages to subdue the possesed player and entombs him in a cocoon of divine ice using a magical item; a small shard of ice that must be injested.", 
+    "intro": "The party has been captured by the Kingdom of Loniria and must prove their worth to survive", 
+    "tittle": "Something's Bugging Me", 
     "specs": [
       {
         "combat": "combat details",
@@ -8,7 +11,10 @@
         "roleplay": "roleplay details"
       }
     ]},
-    { "id": 2, "description": "description 2", "intro": "intro 2", "tittle": "Welcome to Lorn", 
+    { "id": 2, 
+    "description": "description 2", 
+    "intro": "intro 2", 
+    "tittle": "Welcome to Lorn", 
     "specs": [
       {
         "combat": "combat details",
@@ -16,7 +22,10 @@
         "roleplay": "roleplay details"
       }
     ]},
-    { "id": 3, "description": "description 3", "intro": "intro 3", "tittle": "Missing Person", 
+    { "id": 3, 
+    "description": "description 3", 
+    "intro": "intro 3", 
+    "tittle": "Missing Person / Gaslighting Old Kobolds", 
     "specs": [
       {
         "combat": "combat details",
