@@ -43,3 +43,17 @@ Thumbs.db
 .env.local
 .env
 .env
+libs/prisma-client/src/index-browser.js
+libs/prisma-client/src/index.d.ts
+libs/prisma-client/src/index.js
+libs/prisma-client/src/index.ts
+libs/prisma-client/src/package.json
+libs/prisma-client/src/query_engine-windows.dll.node
+libs/prisma-client/src/schema.prisma
+libs/prisma-client/src/lib/prisma-client.spec.ts
+libs/prisma-client/src/lib/prisma-client.ts
+libs/prisma-client/src/runtime/edge.js
+libs/prisma-client/src/runtime/index-browser.d.ts
+libs/prisma-client/src/runtime/index-browser.js
+libs/prisma-client/src/runtime/index.d.ts
+libs/prisma-client/src/runtime/index.js

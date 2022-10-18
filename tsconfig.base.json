@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@bennxworkspace/prisma-client": ["libs/prisma-client/src/index.ts"],
+      "@bennxworkspace/prisma-client": ["libs/prisma-client/src"],
       "@bennxworkspace/shared/ui": ["libs/shared/ui/src/index.ts"]
     }
   },
