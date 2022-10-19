@@ -7,7 +7,6 @@ const NavBar = () => {
   const pageLinks = [
     {name: 'Locations'},
     {name: 'Deities'},
-    {name: 'Factions'},
     {name: 'Sessions'},
     {name: 'NPCS'},
   ]

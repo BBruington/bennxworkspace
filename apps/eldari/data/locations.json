@@ -1,0 +1,36 @@
+{
+  "locations": [
+    {
+      "id": 1,
+      "Tel'Edare": [
+        {
+          "government": "Dictatorship"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "Loniria": [
+        {
+          "government": "Theocracy"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "Emiruu": [
+        {
+          "government": "Republic"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "Herkenwald": [
+        {
+          "government": "Monarchy"
+        }
+      ]
+    }
+  ]
+}
