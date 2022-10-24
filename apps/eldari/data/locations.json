@@ -31,6 +31,22 @@
           "government": "Monarchy"
         }
       ]
+    },
+    {
+      "id": 5,
+      "Delmuth": [
+        {
+          "government": "Autocracy"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "Trax": [
+        {
+          "government": "?"
+        }
+      ]
     }
   ]
 }

@@ -11,15 +11,15 @@ export interface IndexProps {}
       name: "Tel'Edare",
       description: 'You can manage phone, email and chat conversations all from a single mailbox.',
     },
-    { name: 'Delmuth', description: 'You can manage phone, email and chat conversations all from a single mailbox.' },
+    { name: 'Loniria', description: 'Find what you need with advanced filters, bulk actions, and quick views.' },
+    { name: 'The City-States of Emiruu', description: 'You can manage phone, email and chat conversations all from a single mailbox.' },
     {
       name: 'Herkenwald',
       description: 'You can manage phone, email and chat conversations all from a single mailbox.',
     },
-    { name: 'The City-States of Emiruu', description: 'You can manage phone, email and chat conversations all from a single mailbox.' },
-    { name: 'The Great Eclipse', description: 'Find what you need with advanced filters, bulk actions, and quick views.' },
+    { name: 'Delmuth', description: 'You can manage phone, email and chat conversations all from a single mailbox.' },
     { name: 'Trax', description: 'Find what you need with advanced filters, bulk actions, and quick views.' },
-    { name: 'Loniria', description: 'Find what you need with advanced filters, bulk actions, and quick views.' },
+    { name: 'The Great Eclipse', description: 'Find what you need with advanced filters, bulk actions, and quick views.' },
     { name: 'The Glimmering Abyss', description: 'Find what you need with advanced filters, bulk actions, and quick views.' },
     ]
 
