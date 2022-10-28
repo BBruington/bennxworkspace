@@ -33,7 +33,7 @@ export default function Index(props: IndexProps) {
           >
             {people.map((person) => (
               <li key={person.name}>
-                <div className="space-y-4 sm:grid sm:grid-cols-3 sm:gap-6 sm:space-y-0 lg:gap-8">
+                <div className="space-y-4 sm:grid sm:grid-cols-3 sm:gap-6 sm:space-y-0 lg:gap-8 xs:flex-col">
                   <div className="aspect-w-3 aspect-h-2 h-0 sm:aspect-w-3 sm:aspect-h-4">
                     <img className="rounded-lg object-cover shadow-lg" src={person.imageUrl} alt="" />
                   </div>

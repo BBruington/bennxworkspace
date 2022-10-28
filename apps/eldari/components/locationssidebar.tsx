@@ -1,7 +1,6 @@
 import { Fragment, useState } from 'react'
-import { Dialog, Menu, Transition } from '@headlessui/react'
+import { Dialog, Transition } from '@headlessui/react'
 import {
-  Bars3BottomLeftIcon,
   CalendarIcon,
   ChartBarIcon,
   FolderIcon,
@@ -12,7 +11,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 const navigation = [
-  { name: "Tel'Edare", href: '#', icon: HomeIcon, current: true },
+  { name: "Tel'Edare", href: '#', icon: HomeIcon, current: false },
   { name: 'The Great Eclipse', href: '#', icon: UsersIcon, current: false },
   { name: 'Delmuth', href: '#', icon: FolderIcon, current: false },
   { name: 'Trax', href: '#', icon: CalendarIcon, current: false },
@@ -21,11 +20,7 @@ const navigation = [
   { name: 'The City-States of Emiruu', href: '#', icon: ChartBarIcon, current: false },
   { name: 'The Glimmering Abyss', href: '#', icon: ChartBarIcon, current: false },
 ]
-const userNavigation = [
-  { name: 'Your Profile', href: '#' },
-  { name: 'Settings', href: '#' },
-  { name: 'Sign out', href: '#' },
-]
+
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -44,7 +39,7 @@ export default function LocationsSideBar() {
         <body class="h-full">
         ```
       */}
-      <div className=''>
+      <div className=''>        
         <Transition.Root show={sidebarOpen} as={Fragment}>
           <Dialog as="div" className="relative z-40 md:hidden" onClose={setSidebarOpen}>
             <Transition.Child
@@ -125,7 +120,7 @@ export default function LocationsSideBar() {
                 </Dialog.Panel>
               </Transition.Child>
               <div className="w-14 flex-shrink-0" aria-hidden="true">
-                {/* Dummy element to force sidebar to shrink to fit close icon */}
+                 {/* Dummy element to force sidebar to shrink to fit close icon  */}
               </div>
             </div>
           </Dialog>
@@ -167,7 +162,7 @@ export default function LocationsSideBar() {
             </div>
           </div>
         </div>
-        <div className="flex flex-1 flex-col md:pl-64">
+        {/* <div className="flex flex-1 flex-col md:pl-64">
           <div className="sticky top-0 z-10 flex h-16 flex-shrink-0 bg-white shadow">
             <button
               type="button"
@@ -186,18 +181,18 @@ export default function LocationsSideBar() {
                   
                 </form>
               </div>
-              <div className="ml-4 flex items-center md:ml-6">               
+              <div className="ml-4 flex items-center md:ml-6">                */}
 
                 {/* Profile dropdown */}
-                <Menu as="div" className="relative ml-3">
+                {/* <Menu as="div" className="relative ml-3">
                   <div>
                     <Menu.Button className="flex max-w-xs items-center rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                       <span className="sr-only">Open user menu</span>
-                      <img
+                       <img
                         className="h-8 w-8 rounded-full"
                         src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                         alt=""
-                      />
+                      /> 
                     </Menu.Button>
                   </div>
                   <Transition
@@ -227,11 +222,11 @@ export default function LocationsSideBar() {
                       ))}
                     </Menu.Items>
                   </Transition>
-                </Menu>
-              </div>
+                </Menu> */}
+              {/* </div>
             </div>
           </div>          
-        </div>
+        </div> */}
       </div>
     </>
   )
