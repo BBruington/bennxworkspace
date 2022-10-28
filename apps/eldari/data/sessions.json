@@ -25,7 +25,18 @@
     { "id": 3, 
     "description": "description 3", 
     "intro": "intro 3", 
-    "tittle": "Missing Person / Gaslighting Old Kobolds", 
+    "tittle": "Missing Person / Gaslighting an Old Kobold", 
+    "specs": [
+      {
+        "combat": "combat details",
+        "npcs": "npcs are here",
+        "roleplay": "roleplay details"
+      }
+    ]},
+    { "id": 4, 
+    "description": "description 3", 
+    "intro": "intro 3", 
+    "tittle": "Missing Person / A Feeling of Dread", 
     "specs": [
       {
         "combat": "combat details",
