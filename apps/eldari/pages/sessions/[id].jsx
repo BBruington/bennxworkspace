@@ -3,7 +3,10 @@ import {
   HomeIcon,
   UserGroupIcon,
 } from '@heroicons/react/24/outline';
+
 import sessions from '../../data/sessions.json';
+
+import {useState} from 'react';
 
 export async function getStaticProps(staticProps) {
   const params = staticProps.params;
@@ -44,11 +47,7 @@ export async function getStaticPaths() {
 }
 
 
-const navigation = [
-  { name: 'Combat', href: '#', icon: HomeIcon, current: false },
-  { name: 'RolePlay', href: '#', icon: CalendarIcon, current: false },
-  { name: 'NPCS', href: '#', icon: UserGroupIcon, current: false },
-]
+
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -56,9 +55,51 @@ function classNames(...classes) {
 
 
 export default function SessionInfo({sessions}) {
+  
+  const [showGeneral, setShowGeneral] = useState(true);
 
-  const {tittle, intro, description} = sessions;
-  const { combat, npcs, roleplay } = sessions.specs;
+  const enableGeneral = () => {
+    setShowCombat(false);
+    setShowRolePlay(false);
+    setShowNPCS(false);
+    setShowGeneral(true);
+  }
+
+  const [showCombat, setShowCombat] = useState(false);
+
+  const enableCombat = () => {
+    setShowRolePlay(false);
+    setShowNPCS(false);
+    setShowGeneral(false);
+    setShowCombat(true);
+  }
+  
+  const [showRolePlay, setShowRolePlay] = useState(false);
+  
+  const enableRolePlay = () => {
+    setShowCombat(false);
+    setShowNPCS(false);
+    setShowGeneral(false);
+    setShowRolePlay(true);
+  }
+  
+  const [showNPCS, setShowNPCS] = useState(false);
+  
+  const enableNPCS = () => {
+    setShowCombat(false);
+    setShowRolePlay(false);
+    setShowGeneral(false);
+    setShowNPCS(true);
+  }
+
+  const navigation = [
+    { name: 'General', onclick: enableGeneral, icon: HomeIcon, current: false },
+    { name: 'Combat', onclick: enableCombat, icon: HomeIcon, current: false },
+    { name: 'RolePlay', onclick: enableRolePlay, icon: CalendarIcon, current: false },
+    { name: 'NPCS', onclick: enableNPCS, icon: UserGroupIcon, current: false },
+  ]
+
+  const {tittle, intro, description, specs: {combat, roleplay, npcs}} = sessions;
 
   return (
     <>
@@ -82,7 +123,7 @@ export default function SessionInfo({sessions}) {
                     {navigation.map((item) => (
                       <a
                         key={item.name}
-                        href={item.href}
+                        onClick={item.onclick}
                         className={classNames(
                           item.current
                             ? 'bg-gray-200 text-gray-900'
@@ -111,11 +152,35 @@ export default function SessionInfo({sessions}) {
             <main className="relative z-0 flex-1 overflow-y-auto focus:outline-none xl:order-last">
               {/* Start main area*/}
               <div className="absolute inset-0 py-6 px-4 sm:px-6 lg:px-8">
-                <h2>{tittle}</h2>
-                <div>{intro}</div>
-                <div className="h-full rounded-lg border-2 border-dashed border-gray-200"> 
-                  <div>{description}</div>
-                </div>
+                {showGeneral && (
+                  <>
+                    <h2>{tittle}</h2>
+                    <div>{intro}</div>
+                    <div className="h-full rounded-lg border-2 border-dashed border-gray-200"> 
+                      <div>{description}</div>
+                    </div>
+                  </>
+                )}
+
+                {showCombat && (
+                  <>
+                    <h2>{combat}</h2>
+                    <div>{intro}</div>
+                    <div className="h-full rounded-lg border-2 border-dashed border-gray-200"> 
+                      <div>{description}</div>
+                    </div>
+                  </>
+                )}
+
+                {showRolePlay && (
+                  <>
+                    <h2>{roleplay}</h2>
+                    <div>{intro}</div>
+                    <div className="h-full rounded-lg border-2 border-dashed border-gray-200"> 
+                      <div>{description}</div>
+                    </div>
+                  </>
+                )}
               </div>
               {/* End main area */}
             </main>
