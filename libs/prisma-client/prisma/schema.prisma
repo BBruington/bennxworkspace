@@ -1,20 +1,20 @@
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
   previewFeatures = ["referentialIntegrity"]
 }
 
 //Because PlanetScale doesn’t support foreign key constraints and Prisma defaults to using foreign keys to express relations, 
 //we need to set this referentialIntegrity property when using Prisma with PlanetScale.
 datasource db {
-  provider = "mysql"
-  url = env("DATABASE_URL")
+  provider             = "mysql"
+  url                  = env("DATABASE_URL")
   referentialIntegrity = "prisma"
 }
 
 model Inquiry {
-id      Int   @default(autoincrement()) @id
-name    String
-email   String
-subject String?
-message String
+  id      Int     @id @default(autoincrement())
+  name    String
+  email   String
+  subject String?
+  message String
 }
