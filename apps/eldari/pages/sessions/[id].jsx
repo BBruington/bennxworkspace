@@ -30,17 +30,17 @@ export async function getStaticPaths() {
   const paths = sessions.session.map( (session) => {
     return {
       params: {
+        // this is what manually prerendering pages looks like
+        /*: [
+          { params: { id: '0' } }, 
+          { params: { id: '1' } }, 
+        ],*/
         id: session.id.toString(),
       },
     };
   });
 
   return {
-    // this is what manually prerendering pages looks like
-    /*: [
-      { params: { id: '0' } }, 
-      { params: { id: '1' } }, 
-    ],*/
     paths,
     fallback: false,
   };
@@ -99,7 +99,7 @@ export default function SessionInfo({sessions}) {
     { name: 'NPCS', onclick: enableNPCS, icon: UserGroupIcon, current: false },
   ]
 
-  const {tittle, intro, description, specs: {combat, roleplay, npcs}} = sessions;
+  const {title, intro, description, specs: {combat, roleplay, npcs}} = sessions;
 
   return (
     <>
@@ -154,7 +154,7 @@ export default function SessionInfo({sessions}) {
               <div className="absolute inset-0 py-6 px-4 sm:px-6 lg:px-8">
                 {showGeneral && (
                   <>
-                    <h2>{tittle}</h2>
+                    <h2>{title}</h2>
                     <div>{intro}</div>
                     <div className="h-full rounded-lg border-2 border-dashed border-gray-200"> 
                       <div>{description}</div>

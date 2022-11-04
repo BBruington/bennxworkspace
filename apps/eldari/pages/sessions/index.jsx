@@ -19,7 +19,7 @@ export function Index(/*props: IndexProps*/) {
         {sessions.session.map((session) => (
           <div key={session.id} className="relative border-2 border-gray-200 ">
             <dt className=''>
-              <h2 className='mt-2 ml-8 text-base text-gray-500'>{session.tittle}</h2>
+              <h2 className='mt-2 ml-8 text-base text-gray-500'>{session.title}</h2>
               <Link href={`/sessions/${session.id}`}>
                 <a className='cursor-pointer hover:text-cyan-500 ml-9 text-lg text-center font-medium leading-6 text-gray-900'>Session {session.id}</a>
               </Link>
