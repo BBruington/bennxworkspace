@@ -11,10 +11,13 @@ datasource db {
   referentialIntegrity = "prisma"
 }
 
-model Inquiry {
-  id      Int     @id @default(autoincrement())
-  name    String
-  email   String
-  subject String?
-  message String
+model SessionTest {
+  id          Int @id @default(autoincrement())
+  description String
+  intro       String
+  title       String
+  //role         Role            @default(BASIC)
+  combat      String
+  npcs        String
+  roleplay    String
 }
