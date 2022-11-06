@@ -4,21 +4,23 @@ import {
   UserGroupIcon,
 } from '@heroicons/react/24/outline';
 
+
 import sessions from '../../data/sessions.json';
 
 import {useState} from 'react';
 
 export async function getStaticProps(staticProps) {
-  const params = staticProps.params;
-  const findSessionNumById = sessions.session.find((session) => {
+  const sess = await fetch('/api/findSession', { method: 'GET'});
+  sess.json()
+  const findSessionNumById = sess.find((session) => {
     return (
-      session.id.toString() === params.id //dynamic id
+      session.session.toString() === sess.session //dynamic id
     )
   });
 
   return {
     props: {
-      sessions: findSessionNumById ? findSessionNumById : {},    
+      sess: findSessionNumById ? findSessionNumById : {},    
     },
   };
 }
@@ -27,7 +29,10 @@ export async function getStaticPaths() {
 
   // i can prerender all of the sessions by mapping
   // them out and finding the id
-  const paths = sessions.session.map( (session) => {
+  
+  const paths = await fetch('/api/findSession', { 
+  method: 'GET'})
+  paths.json().map( (session) => {
     return {
       params: {
         // this is what manually prerendering pages looks like
@@ -99,7 +104,7 @@ export default function SessionInfo({sessions}) {
     { name: 'NPCS', onclick: enableNPCS, icon: UserGroupIcon, current: false },
   ]
 
-  const {title, intro, description, specs: {combat, roleplay, npcs}} = sessions;
+  const {title, intro, description, combat, roleplay, npcs} = sessions;
 
   return (
     <>

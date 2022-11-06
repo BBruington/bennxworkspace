@@ -1,7 +1,19 @@
+
+
 generator client {
   provider        = "prisma-client-js"
   previewFeatures = ["referentialIntegrity"]
 }
+
+//pscale connect eld-db main --port 3309
+//--schema=./libs/prisma-client/prisma/schema.prisma
+
+//execute prisma schema
+//npx prisma db push
+
+//look at db
+//npx prisma studio
+
 
 //Because PlanetScale doesn’t support foreign key constraints and Prisma defaults to using foreign keys to express relations, 
 //we need to set this referentialIntegrity property when using Prisma with PlanetScale.
@@ -13,7 +25,8 @@ datasource db {
 
 model SessionTest {
   id          Int @id @default(autoincrement())
-  description String
+  session     Int
+  description String @db.Text
   intro       String
   title       String
   //role         Role            @default(BASIC)
