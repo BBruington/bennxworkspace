@@ -25,7 +25,7 @@ datasource db {
 
 model SessionTest {
   id          Int @id @default(autoincrement())
-  session     Int
+  session     Int @unique
   description String @db.Text
   intro       String
   title       String

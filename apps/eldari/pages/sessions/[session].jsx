@@ -4,62 +4,52 @@ import {
   UserGroupIcon,
 } from '@heroicons/react/24/outline';
 
-
-import sessions from '../../data/sessions.json';
+// import sessions from '../../data/sessions.json';
 
 import {useState} from 'react';
 
+import { loadSessions } from '../../lib/loadSessions';
+
 export async function getStaticProps(staticProps) {
-  const sess = await fetch('/api/findSession', { method: 'GET'});
-  sess.json()
-  const findSessionNumById = sess.find((session) => {
+  const params = staticProps.params;
+  const sess = await loadSessions();
+
+  console.log('sess', sess)
+  const findSessionNumById = sess.find((s) => {
     return (
-      session.session.toString() === sess.session //dynamic id
+      s.session.toString() == params.session //dynamic id
     )
   });
-
-  return {
-    props: {
-      sess: findSessionNumById ? findSessionNumById : {},    
-    },
-  };
+  console.log('findsessionnumbyid', {findSessionNumById})
+  return { props: { sess: findSessionNumById ? findSessionNumById : {}, }, };
 }
 
-export async function getStaticPaths() {
-
-  // i can prerender all of the sessions by mapping
-  // them out and finding the id
+export async function getStaticPaths() {  
   
-  const paths = await fetch('/api/findSession', { 
-  method: 'GET'})
-  paths.json().map( (session) => {
+  const sess = await loadSessions();
+  console.log('paths sess', sess);
+
+  const paths = sess.map( (s) => {
     return {
-      params: {
-        // this is what manually prerendering pages looks like
-        /*: [
-          { params: { id: '0' } }, 
-          { params: { id: '1' } }, 
-        ],*/
-        id: session.id.toString(),
-      },
+      params: 
+      { 
+        session: s.session.toString()  
+       },
     };
   });
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }
-
-
-
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-
-export default function SessionInfo({sessions}) {
+export default function SessionInfo({sess}) {
+  console.log('session', {sess});
   
   const [showGeneral, setShowGeneral] = useState(true);
 
@@ -103,8 +93,7 @@ export default function SessionInfo({sessions}) {
     { name: 'RolePlay', onclick: enableRolePlay, icon: CalendarIcon, current: false },
     { name: 'NPCS', onclick: enableNPCS, icon: UserGroupIcon, current: false },
   ]
-
-  const {title, intro, description, combat, roleplay, npcs} = sessions;
+  const {title, intro, description, combat, roleplay, npcs} = sess;
 
   return (
     <>
