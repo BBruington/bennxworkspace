@@ -14,20 +14,17 @@ export async function getStaticProps(staticProps) {
   const params = staticProps.params;
   const sess = await loadSessions();
 
-  console.log('sess', sess)
   const findSessionNumById = sess.find((s) => {
     return (
       s.session.toString() == params.session //dynamic id
     )
   });
-  console.log('findsessionnumbyid', {findSessionNumById})
   return { props: { sess: findSessionNumById ? findSessionNumById : {}, }, };
 }
 
 export async function getStaticPaths() {  
   
   const sess = await loadSessions();
-  console.log('paths sess', sess);
 
   const paths = sess.map( (s) => {
     return {
@@ -49,7 +46,6 @@ function classNames(...classes) {
 }
 
 export default function SessionInfo({sess}) {
-  console.log('session', {sess});
   
   const [showGeneral, setShowGeneral] = useState(true);
 
