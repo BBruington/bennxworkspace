@@ -12,7 +12,7 @@ export default async function findSessions(req, res) {
     
   try{ 
     const testSes = await prisma.sessionTest.findMany({
-      where: {
+      where: { 
         session: req.session
       }
     });

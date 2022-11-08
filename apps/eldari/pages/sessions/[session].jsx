@@ -146,8 +146,8 @@ export default function SessionInfo({sess}) {
                   <>
                     <h2>{title}</h2>
                     <div>{intro}</div>
-                    <div className="h-full rounded-lg border-2 border-dashed border-gray-200"> 
-                      <div>{description}</div>
+                    <div className="h-full rounded-lg border-2 border-dashed border-gray-200 "> 
+                      <div className='m-2'>{description}</div>
                     </div>
                   </>
                 )}

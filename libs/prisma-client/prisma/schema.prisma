@@ -8,10 +8,10 @@ generator client {
 //pscale connect eld-db main --port 3309
 //--schema=./libs/prisma-client/prisma/schema.prisma
 
-//execute prisma schema
+//init current prisma schema
 //npx prisma db push
 
-//look at db
+//look at db table
 //npx prisma studio
 
 

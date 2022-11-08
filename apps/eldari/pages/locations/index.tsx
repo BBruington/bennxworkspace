@@ -1,6 +1,6 @@
 import styles from './index.module.css';
 import Link from 'next/link';
-import LocationsSideBar from 'apps/eldari/components/locationssidebar';
+import LocationsSideBar from '../../components/locationssidebar';
 
   
 
@@ -53,7 +53,11 @@ export function Index(props: IndexProps) {
                             <a className='cursor-pointer ml-9 text-lg text-center font-medium leading-6 text-gray-900'>{feature.name}</a>
                           </Link>
                         </dt>
-                        <dd className="mt-2 ml-8 text-base text-gray-500">{feature.description}</dd>
+                        <dt>
+                          <Link href={`/locations/${feature.name}`}>
+                            <dd className="cursor-pointer mt-2 ml-8 text-base text-gray-500">{feature.description}</dd>
+                          </Link>
+                        </dt>
                       </div>
                     ))}
                   </dl>                

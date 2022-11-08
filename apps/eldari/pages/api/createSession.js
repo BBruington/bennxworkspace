@@ -35,7 +35,7 @@ export default async function handler(req, res) {
 
 main()
 .catch(e => {
-  console.error(e.message)
+  console.error('error', e.message)
 })
 .finally(async () => {
   await prisma.$disconnect()
