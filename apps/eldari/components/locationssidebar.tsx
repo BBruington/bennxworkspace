@@ -11,14 +11,14 @@ import {
 } from '@heroicons/react/24/outline'
 
 const navigation = [
-  { name: "Tel'Edare", href: '#', icon: HomeIcon, current: false },
-  { name: 'The Great Eclipse', href: '#', icon: UsersIcon, current: false },
-  { name: 'Delmuth', href: '#', icon: FolderIcon, current: false },
-  { name: 'Trax', href: '#', icon: CalendarIcon, current: false },
-  { name: 'Herkenwald', href: '#', icon: InboxIcon, current: false },
-  { name: 'Loniria', href: '#', icon: ChartBarIcon, current: false },
-  { name: 'The City-States of Emiruu', href: '#', icon: ChartBarIcon, current: false },
-  { name: 'The Glimmering Abyss', href: '#', icon: ChartBarIcon, current: false },
+  { name: "Tel'Edare", href: '/locations/teledare', icon: HomeIcon, current: false },
+  { name: 'The Great Eclipse', href: '/locations/thegreateclipse', icon: UsersIcon, current: false },
+  { name: 'Delmuth', href: '/locations/delmuth', icon: FolderIcon, current: false },
+  { name: 'Trax', href: '/locations/trax', icon: CalendarIcon, current: false },
+  { name: 'Herkenwald', href: '/locations/herkenwald', icon: InboxIcon, current: false },
+  { name: 'Loniria', href: '/locations/loniria', icon: ChartBarIcon, current: false },
+  { name: 'The City-States of Emiruu', href: '/locations/emiruu', icon: ChartBarIcon, current: false },
+  { name: 'The Glimmering Abyss', href: '/locations/glimmeringabyss', icon: ChartBarIcon, current: false },
 ]
 
 
