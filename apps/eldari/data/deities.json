@@ -2,67 +2,35 @@
   "deities": [
     {
       "id": 1,
-      "Wel'Kreard": [
-        {
-          "Alignment": "Lawful Neutral"
-        }
-      ]
+      "deity": "Wel'Kreard"
     },
     {
       "id": 2,
-      "Vaanithel": [
-        {
-          "Alignment": "Chaotic Neutral"
-        }
-      ]
+      "deity": "Vaanithel"
     },
     {
       "id": 3,
-      "Maerd": [
-        {
-          "Alignment": "Chaotic Neutral"
-        }
-      ]
+      "deity": "Maerd"
     },
     {
       "id": 4,
-      "Shub'Girothe": [
-        {
-          "Alignment": "Chaotic Neutral"
-        }
-      ]
+      "deity": "Shub'Girothe"
     },
     {
       "id": 5,
-      "Stern": [
-        {
-          "Alignment": "Lawful Good"
-        }
-      ]
+      "deity": "Stern"
     },
     {
       "id": 6,
-      "Archon": [
-        {
-          "Alignment": "Chaotic Good"
-        }
-      ]
+      "deity": "Archon"
     },
     {
       "id": 7,
-      "Aazzel": [
-        {
-          "Alignment": "Lawful Evil"
-        }
-      ]
+      "deity": "Aazzel"
     },
     {
       "id": 8,
-      "The Frostmaiden": [ 
-        {
-          "Alignment": "Chaotic Evil"
-        }
-      ]
+      "deity": "The Frostmaiden"
     }
   ]
 }

@@ -1,12 +1,22 @@
 import styles from './deities.module.css';
+import DeityCard from '../../components/deityCard';
+import {deities} from '../../data/deities.json'
 
 /* eslint-disable-next-line */
 export interface DeitiesProps {}
 
-export function Deities(props: DeitiesProps) {
+export function Deities(props) {
+
+
   return (
     <div className={styles['container']}>
-      <h1>Welcome to Deities!</h1>
+      {deities.map((d) => {
+        return (
+          <DeityCard 
+            key={d.id}
+            deity={d.deity}
+          />
+        )})}
     </div>
   );
 }
