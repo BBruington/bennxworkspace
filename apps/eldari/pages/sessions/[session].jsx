@@ -171,6 +171,15 @@ export default function SessionInfo({sess}) {
                     </div>
                   </>
                 )}
+                {showNPCS && (
+                  <>
+                    <h2>{npcs}</h2>
+                    <div>{intro}</div>
+                    <div className="h-full rounded-lg border-2 border-dashed border-gray-200"> 
+                      <div>{description}</div>
+                    </div>
+                  </>
+                )}
               </div>
               {/* End main area */}
             </main>
