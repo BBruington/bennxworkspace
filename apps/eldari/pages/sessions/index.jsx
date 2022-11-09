@@ -1,7 +1,4 @@
-import styles from './index.module.css';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
 import { loadSessions } from '../../lib/loadSessions';
 
 /* eslint-disable-next-line */
@@ -16,21 +13,26 @@ export async function getServerSideProps() {
 
 const Index = ({sessions}) => {
 
-  const router = useRouter();
 
   return (
-    <div className=''>
+    <div>
       <h1 className='py-5  text-lg text-gray-900 font-medium flex justify-center'>Here you can check out past sessions</h1>
-      <div className={styles['container']}>
+      <div>
         {sessions.map((s) => (
-          <div key={s.session} className="mt-1 relative border-2 border-gray-200 ">
-            <dt className=''>
-              <h2 className='mt-3 ml-8 text-base text-gray-500'>{s.title}</h2>
-              <Link href={`/sessions/${s.session}`}>
-                <a className='cursor-pointer hover:text-cyan-500 ml-9 text-lg text-center font-medium leading-6 text-gray-900'>Session {s.session}</a>
-              </Link>
-            </dt>
-          </div>
+          <Link 
+          href={`/sessions/${s.session}`} 
+          key={s.session}
+          className='cursor-pointer hover:bg-gray-150'
+          >
+            <div className="pt-1 mx-0 flex justify-center border-2 border-gray-200 cursor-pointer hover:bg-gray-100">
+              <a>
+                <d1 className='cursor-pointer justify-center'>
+                  <dt className='text-lg flex justify-center hover:text-cyan-500 font-medium text-gray-900'>Session {s.session}</dt>
+                  <dt className='justify-center pt-3 text-base text-gray-500'>{s.title}</dt>
+                </d1>
+              </a>
+            </div>
+          </Link>
         ))} 
       </div>
     </div>
