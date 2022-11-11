@@ -1,4 +1,3 @@
-import {deities} from '../data/deities.json'
 
 export default function DeityCard(props) {
   const {deity} = props
