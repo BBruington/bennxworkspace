@@ -108,7 +108,7 @@ export default function SessionInfo({sess}) {
                     alt="Your Company"
                   />
                 </div>
-                <nav className="mt-5 flex-1" aria-label="Sidebar">
+                <nav className="mt-5 flex-1 " aria-label="Sidebar">
                   <div className="space-y-1 px-2">
                     {navigation.map((item) => (
                       <a
@@ -116,14 +116,14 @@ export default function SessionInfo({sess}) {
                         onClick={item.onclick}
                         className={classNames(
                           item.current
-                            ? 'bg-gray-200 text-gray-900'
-                            : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900',
-                          'group flex items-center px-2 py-2 text-sm font-medium rounded-md'
+                            ? 'bg-gray-200 text-gray-900 cursor-pointer'
+                            : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900 ' ,
+                          'group flex items-center px-2 py-2 text-sm font-medium rounded-md cursor-pointer'
                         )}
                       >
                         <item.icon
                           className={classNames(
-                            item.current ? 'text-gray-500' : 'text-gray-400 group-hover:text-gray-500',
+                            item.current ? 'text-gray-500' : 'text-gray-400 group-hover:text-gray-500 cursor-pointer',
                             'mr-3 h-6 w-6'
                           )}
                           aria-hidden="true"

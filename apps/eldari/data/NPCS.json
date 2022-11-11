@@ -1,40 +1,33 @@
 {
-  "NPCS": [
+  "npcs": [
     {
       "id": 1,
-      "Scrapper": [
-        {
-          "occupation": "Silver Fang",
-          "intro": "Scrapper is a prison overseer in charge of the players"
-        }
-      ]
+      "name": "Scrapper",
+      "occupation": "Silver Fang",
+      "intro": "Scrapper is a prison overseer in charge of the players",
+      "imageUrl": "/static/npcs/Scrapper.jpg"
+        
     },
     {
       "id": 2,
-      "Root": [
-        {
-          "occupation": "Silver Fang",
-          "intro": "Root is in charge of the millitary forces in Lorn"
-        }
-      ]
+      "name": "Root",
+      "occupation": "Silver Fang",
+      "intro": "Root is in charge of the millitary forces in Lorn",
+      "imageUrl": null
     },
     {
       "id": 3,
-      "Lorn Head Alchemist Glass": [
-        {
-          "occupation": "Silver Fang",
-          "intro": "Glass is an eccentric kobold in charge of the research within Lorn"
-        }
-      ]
+      "name": "Lorn Head Alchemist Glass",
+      "occupation": "Silver Fang",
+      "intro": "Glass is an eccentric kobold in charge of the research within Lorn",
+      "imageUrl": "/static/npcs/Glass.jpg"
     },
     {
       "id": 4,
-      "Retired Fang Alice": [
-        {
-          "occupation": "Silver Fang",
-          "intro": "Alice is the partner of Scrapper who ran from home"
-        }
-      ]
+      "name": "Alice",
+      "occupation": "Silver Fang",
+      "intro": "Alice is the partner of Scrapper who ran from home",
+      "imageUrl": null
     }
   ]
 }

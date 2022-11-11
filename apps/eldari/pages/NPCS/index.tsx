@@ -1,24 +1,8 @@
-import styles from './index.module.css';
-
+import {npcs} from '../../data/NPCS.json'
 /* eslint-disable-next-line */
 export interface IndexProps {}
 
-const people = [
-  {
-    name: 'Scrapper',
-    role: 'Silver Fang of Lorn',
-    imageUrl:
-      '/static/npcs/Scrapper.jpg',
-    bio: 'Ultricies massa malesuada viverra cras lobortis. Tempor orci hac ligula dapibus mauris sit ut eu. Eget turpis urna maecenas cras. Nisl dictum.',
-  },
-  {
-    name: 'Glass',
-    role: 'Court Alchemist of Lorn',
-    imageUrl:
-      '/static/npcs/Glass.jpg',
-    bio: 'Ultricies massa malesuada viverra cras lobortis. Tempor orci hac ligula dapibus mauris sit ut eu. Eget turpis urna maecenas cras. Nisl dictum.',
-  },
-]
+console.log(npcs)
 
 export default function Index(props: IndexProps) {
   return (
@@ -31,20 +15,25 @@ export default function Index(props: IndexProps) {
             role="list"
             className="space-y-12 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8 lg:gap-y-12 lg:space-y-0"
           >
-            {people.map((person) => (
-              <li key={person.name}>
+            {npcs.map((person) => (
+              <li key={person.id}>
                 <div className="space-y-4 sm:grid sm:grid-cols-3 sm:gap-6 sm:space-y-0 lg:gap-8 xs:flex-col">
+                  {
+                    person.imageUrl ?
                   <div className="aspect-w-3 aspect-h-2 h-0 sm:aspect-w-3 sm:aspect-h-4">
                     <img className="rounded-lg object-cover shadow-lg" src={person.imageUrl} alt="" />
                   </div>
+                  :
+                   <></> 
+                  }
                   <div className="sm:col-span-2">
                     <div className="space-y-4">
                       <div className="space-y-1 text-lg font-medium leading-6">
                         <h3>{person.name}</h3>
-                        <p className="text-indigo-600">{person.role}</p>
+                        <p className="text-indigo-600">{person.occupation}</p>
                       </div>
                       <div className="text-lg">
-                        <p className="text-gray-500">{person.bio}</p>
+                        <p className="text-gray-500">{person.intro}</p>
                       </div>
                     </div>
                   </div>

@@ -27,7 +27,7 @@ const Index = ({sessions}) => {
             <div className="pt-1 mx-0 flex justify-center border-2 border-gray-200 cursor-pointer hover:bg-gray-100">
               <a>
                 <d1 className='cursor-pointer justify-center'>
-                  <dt className='text-lg flex justify-center hover:text-cyan-500 font-medium text-gray-900'>Session {s.session}</dt>
+                  <dt className='text-lg flex justify-center hover:text-cyan-500 transition-colors font-medium text-gray-900'>Session {s.session}</dt>
                   <dt className='justify-center pt-3 text-base text-gray-500'>{s.title}</dt>
                 </d1>
               </a>
