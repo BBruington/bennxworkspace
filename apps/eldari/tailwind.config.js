@@ -13,6 +13,9 @@ module.exports = {
     ...createGlobPatternsForDependencies(__dirname),
   ],
   theme: {
+    minWidth: {
+      '1/2': '50%',
+    },
     extend: {},
     screens: {
       'xs': '475px',
