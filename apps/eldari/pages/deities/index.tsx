@@ -15,6 +15,8 @@ export function Deities(props) {
           <DeityCard 
             key={d.id}
             deity={d.deity}
+            alignment={d.alignment}
+            title={d.title}
           />
         )})}
     </div>

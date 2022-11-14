@@ -13,7 +13,7 @@
       "name": "Root",
       "occupation": "Silver Fang",
       "intro": "Root is in charge of the millitary forces in Lorn",
-      "imageUrl": null
+      "imageUrl": "/static/npcs/root.png"
     },
     {
       "id": 3,
@@ -27,7 +27,7 @@
       "name": "Alice",
       "occupation": "Silver Fang",
       "intro": "Alice is the partner of Scrapper who ran from home",
-      "imageUrl": null
+      "imageUrl": "/static/npcs/Alice.jpg"
     }
   ]
 }

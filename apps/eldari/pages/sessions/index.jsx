@@ -9,17 +9,16 @@ export async function getServerSideProps() {
   return { props: {sessions} };
 }
 
-
+//flex items-center justify-between
 
 const Index = ({sessions}) => {
 
 
   return (
     <div>
-      <div className='flex items-center justify-between'>
-        <div>lorem ipsem etc etc</div>
+      <div className=''>
 
-        <div className='mr-15'>
+        <div>
           <h1 className='py-5  text-lg text-gray-900 font-medium flex justify-center'>Here you can check out past sessions</h1>
           {sessions.map((s) => (
             <Link 

@@ -2,7 +2,6 @@ import {npcs} from '../../data/NPCS.json'
 /* eslint-disable-next-line */
 export interface IndexProps {}
 
-console.log(npcs)
 
 export default function Index(props: IndexProps) {
   return (
@@ -21,7 +20,7 @@ export default function Index(props: IndexProps) {
                   {
                     person.imageUrl ?
                   <div className="aspect-w-3 aspect-h-2 h-0 sm:aspect-w-3 sm:aspect-h-4">
-                    <img className="rounded-lg object-cover shadow-lg" src={person.imageUrl} alt="" />
+                    <img className="rounded-lg object-cover shadow-lg w-30 h-25" src={person.imageUrl} alt="" />
                   </div>
                   :
                    <></> 
