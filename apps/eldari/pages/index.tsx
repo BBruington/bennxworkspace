@@ -7,7 +7,7 @@ export function Index() {
       <br></br>
       <div className="h-18 mx-auto px-5 flex items-center justify-around">
         <div>
-          <Image src="/static/photo-testdnd.avif" alt="dnd image" height='200px' width='200px' />
+          <Image src="/static/photo-testdnd.avif" alt="dnd image" height={200} width={200} />
         </div>
 
         <div className="bg-white">
