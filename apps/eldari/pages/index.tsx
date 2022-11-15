@@ -5,7 +5,7 @@ export function Index() {
   return (
     <>
       <br></br>
-      <div className="h-18 mx-auto px-5 flex items-center justify-between">
+      <div className="h-18 mx-auto px-5 flex items-center justify-around">
         <div>
           <Image src="/static/photo-testdnd.avif" alt="dnd image" height='200px' width='200px' />
         </div>
