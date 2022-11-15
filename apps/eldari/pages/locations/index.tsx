@@ -1,4 +1,3 @@
-import styles from './index.module.css';
 import Link from 'next/link';
 import LocationsSideBar from '../../components/locationssidebar';
 

@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import Deities from '.';
+import Deities from './index';
 
 describe('Deities', () => {
   it('should render successfully', () => {
