@@ -1,4 +1,5 @@
-import {npcs} from '../../data/NPCS.json'
+import Image from 'next/image';
+import content from '../../data/NPCS.json';
 /* eslint-disable-next-line */
 export interface IndexProps {}
 
@@ -12,15 +13,15 @@ export default function Index(props: IndexProps) {
 
           <ul
             role="list"
-            className="space-y-12 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8 lg:gap-y-12 lg:space-y-0"
+            className="flex flex-col gap-y-8 space-y-12 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8 lg:gap-y-12 lg:space-y-0"
           >
-            {npcs.map((person) => (
+            {content.npcs.map((person) => (
               <li key={person.id}>
-                <div className="space-y-4 sm:grid sm:grid-cols-3 sm:gap-6 sm:space-y-0 lg:gap-8 xs:flex-col">
+                <div className="space-y-4 grid grid-cols-3 gap-6 space-y-0 lg:gap-8 xs:flex-col">
                   {
                     person.imageUrl ?
-                  <div className="aspect-w-3 aspect-h-2 h-0 sm:aspect-w-3 sm:aspect-h-4">
-                    <img className="rounded-lg object-cover shadow-lg w-30 h-25" src={person.imageUrl} alt="" />
+                  <div className="aspect-w-3 aspect-h-2">
+                    <Image className="rounded-lg object-cover shadow-lg" layout="fill" src={person.imageUrl} alt="" />
                   </div>
                   :
                    <></> 

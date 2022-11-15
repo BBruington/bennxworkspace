@@ -1,6 +1,6 @@
 import styles from './deities.module.css';
 import DeityCard from '../../components/deityCard';
-import {deities} from '../../data/deities.json'
+import content from '../../data/deities.json'
 
 /* eslint-disable-next-line */
 export interface DeitiesProps {}
@@ -10,7 +10,7 @@ export function Deities(props) {
 
   return (
     <div className={styles['container']}>
-      {deities.map((d) => {
+      {content.deities.map((d) => {
         return (
           <DeityCard 
             key={d.id}
