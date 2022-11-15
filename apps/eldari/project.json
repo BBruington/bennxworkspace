@@ -56,6 +56,13 @@
       "options": {
         "lintFilePatterns": ["apps/eldari/**/*.{ts,tsx,js,jsx}"]
       }
+    },
+    "schema.prisma": {
+      "executor": "nx:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "prisma generate"
+      }
     }
   },
   "tags": []
