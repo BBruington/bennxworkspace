@@ -21,7 +21,7 @@ export default function Index(props: IndexProps) {
                   {
                     person.imageUrl ?
                   <div className="aspect-w-3 aspect-h-2">
-                    <Image className="rounded-lg object-cover shadow-lg" layout="responsive" width='70px' height='70px' src={person.imageUrl} alt="" />
+                    <Image className="rounded-lg object-cover shadow-lg" layout="responsive" width={75} height={75} src={person.imageUrl} alt="" />
                   </div>
                   :
                    <></> 

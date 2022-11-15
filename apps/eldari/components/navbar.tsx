@@ -22,7 +22,7 @@ const NavBar = () => {
     <div className="shadow bg-white ">
       <div className="h-16 mx-auto px-5 flex items-center justify-between">
           <a className="text-2xl hover:text-cyan-500 transition-colors cursor-pointer" onClick={handleOnClickHome}>
-          <Image src='/icons/favicon_io/favicon-32x32.png' height='32px' width='32px' alt='github icon'/>
+            <Image src='/icons/favicon_io/favicon-32x32.png' height={32} width={32} alt='github icon'/>
           </a>
           
           <ul className="flex items-center gap-5">
