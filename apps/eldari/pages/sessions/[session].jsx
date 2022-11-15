@@ -4,7 +4,7 @@ import {
   UserGroupIcon,
 } from '@heroicons/react/24/outline';
 
-// import sessions from '../../data/sessions.json';
+// import content from '../../data/sessions.json';
 
 import {useState} from 'react';
 
