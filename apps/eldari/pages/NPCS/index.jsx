@@ -1,10 +1,9 @@
 import Image from 'next/image';
 import content from '../../data/NPCS.json';
 /* eslint-disable-next-line */
-export interface IndexProps {}
 
 
-export default function Index(props: IndexProps) {
+export default function Index() {
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8 lg:py-24">
@@ -21,7 +20,7 @@ export default function Index(props: IndexProps) {
                   {
                     person.imageUrl ?
                   <div className="aspect-w-3 aspect-h-2">
-                    <Image className="rounded-lg object-cover shadow-lg" layout="responsive" width={75} height={75} src={person.imageUrl} alt="" />
+                    <Image className="rounded-lg object-cover shadow-lg" layout="responsive" width={75} height={75} src={person.imageUrl} alt="image of npc" />
                   </div>
                   :
                    <></> 
