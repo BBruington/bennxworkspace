@@ -37,7 +37,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: true,
+    fallback: false,
   };
 }
 
@@ -89,7 +89,7 @@ export default function SessionInfo({sess}) {
     { name: 'RolePlay', onclick: enableRolePlay, icon: CalendarIcon, current: false },
     { name: 'NPCS', onclick: enableNPCS, icon: UserGroupIcon, current: false },
   ]
-  const {title, intro, description, combat, roleplay, npcs} = sess;
+  const {title = 'title', intro = 'intro', description = 'description', combat = 'combat', roleplay = 'roleplay', npcs = 'npcs'} = sess;
 
   return (
     <>
