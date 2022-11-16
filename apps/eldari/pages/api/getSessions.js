@@ -1,23 +1,15 @@
-import { PrismaClient } from '@prisma/client';
-export const prisma = new PrismaClient(); 
+import { prisma } from "./createSession"
 
-
-export default async function findSessions(req, res) {
-  if(req.method === 'GET') {
-    return await main(req, res)
-  } else {
-    return res.status(405).json({message: 'Method not allowed', success: false})
-  }
-}
-
-  async function main(req, res) {
-    
+const getSessions = async (req, res) => {  
   try{ 
-    const testSes = await prisma.sessionTest.findMany();
-    if(testSes.length !== 0) {
-      res.json(testSes);
-    }else {
-      res.json({ message: `sessions could not be found` });
+    if(req.method === 'GET') {
+      const testSes = await prisma.sessionTest.findMany();
+      if(testSes.length !== 0) {
+        res.json(testSes);
+      }else {
+        res.json({ message: `sessions could not be found` });
+      }} else {
+      return res.status(405).json({message: "Method not allowed", success: false})
     }
   } catch(error) {
     console.error('Request error', error);
@@ -25,12 +17,4 @@ export default async function findSessions(req, res) {
   }
 }
 
-
-
-main()
-.catch(e => {
-  console.error(e.message)
-})
-.finally(async () => {
-  await prisma.$disconnect()
-})
+export default getSessions;

@@ -1,4 +1,5 @@
-import { prisma } from "./getSessions"
+import { PrismaClient } from '@prisma/client';
+export const prisma = new PrismaClient(); 
 
 export default async function handler(req, res) {
   if(req.method === 'POST') {

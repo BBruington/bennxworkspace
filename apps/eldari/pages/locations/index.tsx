@@ -42,8 +42,8 @@ export function Index(props: IndexProps) {
                     {features.map((feature) => (
                       <div key={feature.name} className="hover:text-gray-900 hover:bg-gray-100 relative border-2 border-gray-200">
                         <dt>
-                          <Link href={`${feature.href}`}>
-                            <a className='cursor-pointer pl-9 text-lg mb-0 flex justify-center font-medium leading-6 text-gray-900'>{feature.name}</a>
+                          <Link href={`${feature.href}`} className='cursor-pointer pl-9 text-lg mb-0 flex justify-center font-medium leading-6 text-gray-900'>
+                            {feature.name}
                           </Link>
                         </dt>
                         <dt>

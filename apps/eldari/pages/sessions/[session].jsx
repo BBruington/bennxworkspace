@@ -8,7 +8,7 @@ import {
 
 import {useState} from 'react';
 
-import { loadSessions } from '../../lib/loadSessions';
+import {loadSessions} from '../../lib/loadSessions';
 
 export async function getStaticProps(staticProps) {
   const params = staticProps.params;

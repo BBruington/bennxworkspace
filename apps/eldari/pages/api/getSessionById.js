@@ -1,4 +1,4 @@
-import { prisma } from "./getSessions";
+import { prisma } from "./createSession";
 
 export default async function findSessions(req, res) {
   if(req.method === 'GET') {
