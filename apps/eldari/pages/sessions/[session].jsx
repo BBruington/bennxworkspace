@@ -4,7 +4,7 @@ import {
   UserGroupIcon,
 } from '@heroicons/react/24/outline';
 
-// import content from '../../data/sessions.json';
+import content from '../../data/sessions.json';
 
 import {useState} from 'react';
 
@@ -12,8 +12,11 @@ import {loadSessions} from '../../lib/loadSessions';
 
 export async function getStaticProps(staticProps) {
   const params = staticProps.params;
-  const sess = await loadSessions();
-
+  let sess = await loadSessions();
+  if(sess == undefined) { 
+  const data = content.session
+  let sess = data.json()
+  return sess}
   const findSessionNumById = sess.find((s) => {
     return (
       s.session.toString() == params.session //dynamic id
