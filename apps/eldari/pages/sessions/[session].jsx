@@ -10,8 +10,6 @@ import { prisma } from '../../lib/PrismaDb';
 
 import {useState} from 'react';
 
-import {loadSessions} from '../../lib/PrismaDb';
-
 export async function getStaticProps(staticProps) {
   const params = staticProps.params;
   const sess = await prisma.sessionTest.findMany();
@@ -25,7 +23,7 @@ export async function getStaticProps(staticProps) {
 
 export async function getStaticPaths() {  
   
-  const sess = await loadSessions();
+  const sess = await prisma.sessionTest.findMany();
 
   const paths = sess.map( (s) => {
     return {
