@@ -1,6 +1,4 @@
-import { PrismaClient } from '@prisma/client';
-export const prisma = new PrismaClient(); 
-
+import { prisma } from "../../lib/PrismaDb"
 export default async function handler(req, res) {
   if(req.method === 'POST') {
     return await main(req, res)

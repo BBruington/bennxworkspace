@@ -1,4 +1,4 @@
-import { prisma } from "./createSession"
+import { prisma } from "../../lib/PrismaDb"
 
 const getSessions = async (req, res) => {  
   try{ 

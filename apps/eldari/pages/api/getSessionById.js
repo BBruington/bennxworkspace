@@ -1,4 +1,4 @@
-import { prisma } from "./createSession";
+import { prisma } from "../../lib/PrismaDb"
 
 export default async function findSessions(req, res) {
   if(req.method === 'GET') {

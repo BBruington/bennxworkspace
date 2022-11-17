@@ -4,15 +4,17 @@ import {
   UserGroupIcon,
 } from '@heroicons/react/24/outline';
 
+import { prisma } from '../../lib/PrismaDb';
+
 //import content from '../../data/sessions.json';
 
 import {useState} from 'react';
 
-import {loadSessions} from '../../lib/loadSessions';
+import {loadSessions} from '../../lib/PrismaDb';
 
 export async function getStaticProps(staticProps) {
   const params = staticProps.params;
-  let sess = await loadSessions();
+  const sess = await prisma.sessionTest.findMany();
   const findSessionNumById = sess.find((s) => {
     return (
       s.session.toString() == params.session //dynamic id

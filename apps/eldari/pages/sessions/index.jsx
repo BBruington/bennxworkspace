@@ -1,15 +1,11 @@
 import Link from 'next/link';
-import { loadSessions } from '../../lib/loadSessions';
-
-/* eslint-disable-next-line */
-//export interface IndexProps {}
+import {prisma} from '../../lib/PrismaDb';
 
 export async function getServerSideProps() {
-  const sessions = await loadSessions();
+  const sessions = await prisma.sessionTest.findMany();
   return { props: {sessions} };
 }
 
-//flex items-center justify-between
 
 const Index = ({sessions}) => {
 
