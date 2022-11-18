@@ -20,7 +20,7 @@ export default function Index() {
                   {
                     person.imageUrl ?
                   <div className="aspect-w-3 aspect-h-2">
-                    <Image className="rounded-lg object-cover shadow-lg" layout="responsive" width={200} height={200} src={person.imageUrl} alt="image of npc" />
+                    <Image className="rounded-lg object-cover shadow-lg" width={200} height={200} src={person.imageUrl} alt="image of npc" />
                   </div>
                   :
                    <></> 
