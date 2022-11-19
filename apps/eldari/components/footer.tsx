@@ -1,11 +1,13 @@
+import Link from "next/link";
+
 const navigation = {
   main: [
-    { name: 'About', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Jobs', href: '#' },
-    { name: 'Press', href: '#' },
-    { name: 'Accessibility', href: '#' },
-    { name: 'Partners', href: '#' },
+    { name: 'Contact Me', href: 'contactme' },
+    // { name: 'Blog', href: '#' },
+    // { name: 'Jobs', href: '#' },
+    // { name: 'Press', href: '#' },
+    // { name: 'Accessibility', href: '#' },
+    // { name: 'Partners', href: '#' },
   ],
   social: [
     {
@@ -52,15 +54,15 @@ export default function Footer() {
   return (
     <footer className="bg-white">
       <div className="mx-auto max-w-7xl overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
-        {/* <nav className="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
+        <nav className="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
           {navigation.main.map((item) => (
             <div key={item.name} className="px-5 py-2">
-              <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
+              <Link href={`/${item.href.toLowerCase()}`} className="text-base text-gray-500 hover:text-gray-900">
                 {item.name}
-              </a>
+              </Link>
             </div>
           ))}
-        </nav> */}
+        </nav>
         <div className="mt-8 flex justify-center space-x-6">
           {navigation.social.map((item) => (
             <a key={item.name} href={item.href} target="_blank" rel="noreferrer noopener" className="text-gray-400 hover:text-gray-500">
