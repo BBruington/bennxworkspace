@@ -6,7 +6,7 @@ import LocationsSideBar from '../../components/locationssidebar';
 /* eslint-disable-next-line */
 export interface IndexProps {}
   const features = [
-    { name: "Tel'Edare",href: '/locations/teledare',description: 'You can manage phone, email and chat conversations all from a single mailbox.',},
+    { name: "Tel'Edare",href: "/locations/tel'edare",description: 'You can manage phone, email and chat conversations all from a single mailbox.',},
     { name: 'Delmuth',href: '/locations/delmuth',description: 'You can manage phone, email and chat conversations all from a single mailbox.' },
     { name: 'Herkenwald',href: '/locations/herkenwald',description: 'You can manage phone, email and chat conversations all from a single mailbox.',},
     { name: 'The City-States of Emiruu',href: '/locations/emiruu',description: 'You can manage phone, email and chat conversations all from a single mailbox.' },

@@ -12,12 +12,12 @@ export async function getStaticProps(staticProps) {
         s.location.toLowerCase().toString() == params.location //dynamic id
       )
     });
-    return { props: { location: findLocationById ? findLocationById : {}, }, };
+    return { props: { place: findLocationById ? findLocationById : {}, }, };
   }
   
   export async function getStaticPaths() {  
     
-    const locations = content.deities;
+    const locations = content.locations;
   
     const paths = locations.map( (s) => {
       return {
@@ -34,13 +34,13 @@ export async function getStaticProps(staticProps) {
     };
   }
 
-  export default function LocationInfo({location}) {
+  export default function LocationInfo({place}) {
       
-     const { government, } = location;
+     const { government, location } = place;
     
     return (
       <>
-        <div>{location} {government}</div>
+        <div>{government} {location}</div>
       </>
     )
   }
