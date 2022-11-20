@@ -22,7 +22,6 @@ export default async function handler(req, res) {
         roleplay: body.roleplay      
       }
     })
-    console.log(testSes)
      res.status(200).json({ success: true })
   } catch(error) {
     console.error('Request error', error);

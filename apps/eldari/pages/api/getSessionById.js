@@ -16,7 +16,6 @@ export default async function findSessions(req, res) {
         session: req.session
       }
     });
-    console.log(testSes);
     if(testSes.length != 0) {
       res.json(testSes);
     }else {
