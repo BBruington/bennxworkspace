@@ -2,51 +2,33 @@
   "locations": [
     {
       "id": 1,
-      "Tel'Edare": [
-        {
-          "government": "Dictatorship"
-        }
-      ]
+      "location": "Tel'Edare",
+      "government": "Dictatorship"        
     },
     {
       "id": 2,
-      "Loniria": [
-        {
-          "government": "Theocracy"
-        }
-      ]
+      "location": "Loniria",
+      "government": "Theocracy"
     },
     {
       "id": 3,
-      "Emiruu": [
-        {
-          "government": "Republic"
-        }
-      ]
+      "location": "Emiruu",
+      "government": "Republic"
     },
     {
       "id": 4,
-      "Herkenwald": [
-        {
-          "government": "Monarchy"
-        }
-      ]
+      "location": "Herkenwald",
+      "government": "Monarchy"
     },
     {
       "id": 5,
-      "Delmuth": [
-        {
-          "government": "Autocracy"
-        }
-      ]
+      "location": "Delmuth",
+      "government": "Autocracy"
     },
     {
       "id": 6,
-      "Trax": [
-        {
-          "government": "?"
-        }
-      ]
+      "location": "Trax",
+      "government": "?"
     }
   ]
 }
