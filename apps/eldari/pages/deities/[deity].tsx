@@ -12,7 +12,6 @@ export async function getStaticProps(staticProps) {
         s.deity.toLowerCase().toString() == params.deity //dynamic id
       )
     });
-    console.log(findDeityNumById, gods)
     return { props: { god: findDeityNumById ? findDeityNumById : {}, }, };
   }
   
