@@ -35,6 +35,15 @@
     "combat": "combat details",
     "npcs": "npcs are here",
     "roleplay": "roleplay details"
+    },
+    { 
+    "session": 5, 
+    "description": "description 4", 
+    "intro": "intro 4", 
+    "title": "Making an Oath",     
+    "combat": "combat details",
+    "npcs": "npcs are here",
+    "roleplay": "roleplay details"
     }
   ]  
 }
