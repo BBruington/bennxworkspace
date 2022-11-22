@@ -10,13 +10,13 @@
     "roleplay": "roleplay details"
     },
     {  
-      "session": 2,
-      "description": "Worried of Griffith's wellbeing, Scrapper and the party hastily make their way to Loniria. Scrapper briefly speaks to his partner and friend, Ali then brings Griffith to the Alchemists tower while the gnomes, Zook and Psaila, go the Brick the Blacksmith to repair Zook's chainmail armor. There he introduces the kobold in charge: Glass and requests aid to free Griffith from the cocoon of divine ice. Glass accepts and even offers payment to research Griffith after being exposed to such a magical process.", 
-      "intro": "intro 2", 
-      "title": "Welcome to Lorn",    
-      "combat": "combat details",
-      "npcs": "npcs are here",
-      "roleplay": "roleplay details" 
+    "session": 2,
+    "description": "Worried of Griffith's wellbeing, Scrapper and the party hastily make their way to Loniria. Scrapper briefly speaks to his partner and friend, Ali then brings Griffith to the Alchemists tower while the gnomes, Zook and Psaila, go the Brick the Blacksmith to repair Zook's chainmail armor. There he introduces the kobold in charge: Glass and requests aid to free Griffith from the cocoon of divine ice. Glass accepts and even offers payment to research Griffith after being exposed to such a magical process.", 
+    "intro": "intro 2", 
+    "title": "Welcome to Lorn",    
+    "combat": "combat details",
+    "npcs": "npcs are here",
+    "roleplay": "roleplay details" 
     },
     {  
     "session": 3,
