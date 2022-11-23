@@ -143,10 +143,10 @@ export default function SessionInfo({sess}) {
               <div className="absolute inset-0 py-6 px-4 sm:px-6 lg:px-8">
                 {showGeneral && (
                   <>
-                    <h2>{title}</h2>
-                    <div>{intro}</div>
-                    <div className="h-full rounded-lg border-2 border-dashed border-gray-200 "> 
-                      <div className='m-2'>{description}</div>
+                    <h2 className='flex justify-center text-lg font-medium m-2'>{title}</h2>
+                    <div className='flex justify-center m-1 font-medium'>{intro}</div>
+                    <div className="h-full p-1 rounded-lg border-2 border-dashed border-gray-200 "> 
+                      <div className='m-2 p-1'>{description}</div>
                     </div>
                   </>
                 )}
