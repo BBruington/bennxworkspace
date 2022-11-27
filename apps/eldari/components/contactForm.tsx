@@ -1,6 +1,8 @@
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline';
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import { Store } from 'react-notifications-component';
+
 
 export default function ContactForm() {
   const form = useRef();
@@ -11,6 +13,19 @@ export default function ContactForm() {
     .then((result) => {
       console.log(result.text);
       e.target.reset()
+      Store.addNotification({
+        title: "Email Sent!",
+        message: "Your email was sent to me.",
+        type: "success",
+        insert: "top",
+        container: "top-right",
+        animationIn: ["animate__animated", "animate__fadeIn"],
+        animationOut: ["animate__animated", "animate__fadeOut"],
+        dismiss: {
+          duration: 5000,
+          onScreen: true
+        }
+      });
     }, (error) => {
       console.log(error.text)
     });

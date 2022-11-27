@@ -1,4 +1,6 @@
 import { AppProps } from 'next/app';
+import { ReactNotifications } from 'react-notifications-component';
+import 'react-notifications-component/dist/theme.css'
 import NavBar from '../components/navbar';
 import Footer from '../components/footer';
 import Head from 'next/head';
@@ -13,6 +15,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"></link>
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"></link>
       </Head>
+      <ReactNotifications />
       <main className="app">
         <NavBar />
         <Component {...pageProps} />
