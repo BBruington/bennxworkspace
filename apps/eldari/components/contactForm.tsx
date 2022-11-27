@@ -2,21 +2,50 @@ import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline';
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { Store } from 'react-notifications-component';
+import { useState } from 'react';
 
 
 export default function ContactForm() {
   const form = useRef();
+  const [email, setEmail] = useState('');
+  // function isValidEmail(e) {
+  //   return /\S+@\S+\.\S+/.test(e);
+  // }
+  const regexExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/gi;
+
+  const handleOnChangeEmail = (e) => {
+    const email = e.target.value;
+    setEmail(email);    
+  };
+  const [message, setMessage] = useState('');
+  const handleOnChangeMessage = (e) => {
+    const message = e.target.value;
+    setMessage(message);    
+  };
+
   const sendEmail = (e) => {
     e.preventDefault();
-
-    emailjs.sendForm("service_64tt00r", "template_73an1ff", form.current, "0dCyqJFI9kHq9jpw6")
-    .then((result) => {
-      console.log(result.text);
-      e.target.reset()
+    if(email.length === 0 || !regexExp.test(email)) {
       Store.addNotification({
-        title: "Email Sent!",
-        message: "Your email was sent to me.",
-        type: "success",
+        title: "invalid email",
+        message: "Please use a valid email to send an email message",
+        type: "warning",
+        insert: "top",
+        container: "top-right",
+        animationIn: ["animate__animated", "animate__fadeIn"],
+        animationOut: ["animate__animated", "animate__fadeOut"],
+        dismiss: {
+          duration: 5000,
+          onScreen: true
+        }
+      })
+      return
+    }
+    if(message.length === 0 ) {
+      Store.addNotification({
+        title: "invalid message",
+        message: "Please remember to send an email message",
+        type: "warning",
         insert: "top",
         container: "top-right",
         animationIn: ["animate__animated", "animate__fadeIn"],
@@ -26,9 +55,31 @@ export default function ContactForm() {
           onScreen: true
         }
       });
-    }, (error) => {
-      console.log(error.text)
-    });
+      return
+    } else {
+        emailjs.sendForm("service_64tt00r", "template_73an1ff", form.current, "0dCyqJFI9kHq9jpw6")
+        .then((result) => {
+        console.log(result.text);
+        e.target.reset()
+        setEmail('')
+        setMessage('')
+        Store.addNotification({
+          title: "Email Sent!",
+          message: "Your email has been sent",
+          type: "success",
+          insert: "top",
+          container: "top-right",
+          animationIn: ["animate__animated", "animate__fadeIn"],
+          animationOut: ["animate__animated", "animate__fadeOut"],
+          dismiss: {
+            duration: 5000,
+            onScreen: true
+          }
+        });
+      }, (error) => {
+        console.log(error.text)
+      });
+    }
   };
   return (
       <div className="relative bg-white">
@@ -92,6 +143,7 @@ export default function ContactForm() {
                     id="email"
                     name="user_email"
                     type="email"
+                    onChange={handleOnChangeEmail}
                     autoComplete="email"
                     className="block w-full rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                     placeholder="Email"
@@ -103,14 +155,12 @@ export default function ContactForm() {
                   </label>
                   <input
                     type="tel"
-                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                     name="user_phone"
                     id="phone"
                     autoComplete="tel"
                     className="block w-full rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                     placeholder="Phone Number"
                     />
-                    <div className='p-1'>Format: 123-456-7890</div>
                 </div>
                 <div>
                   <label htmlFor="message" className="sr-only">
@@ -119,6 +169,7 @@ export default function ContactForm() {
                   <textarea
                     id="message"
                     name="message"
+                    onChange={handleOnChangeMessage}
                     rows={4}
                     className="block w-full rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                     placeholder="Message"
