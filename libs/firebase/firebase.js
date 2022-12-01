@@ -6,6 +6,8 @@ import {
   signInWithPopup, 
   signInWithRedirect, 
   GoogleAuthProvider } from 'firebase/auth';
+  import { 
+    getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_API_KEY,
@@ -29,4 +31,6 @@ googleProvider.setCustomParameters({
 
 export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider);
 
-export const signINWithGoogleRedirect = () => signInWithRedirect( auth, googleProvider);
+export const signInWithGoogleRedirect = () => signInWithRedirect( auth, googleProvider);
+
+export const db = getFirestore();

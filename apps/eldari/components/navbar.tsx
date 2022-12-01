@@ -9,6 +9,8 @@ const NavBar = () => {
     {name: 'Deities'},
     {name: 'Sessions'},
     {name: 'NPCS'},
+    {name: 'Login'},
+
   ]
 
   const router = useRouter();
