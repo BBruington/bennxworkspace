@@ -1,4 +1,25 @@
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../../libs/firebase/firebase";
+import { useAuthState } from 'react-firebase-hooks/auth';
+
+
+
+
 export default function SignUpForm() {
+
+  const [user, loading] = useAuthState(auth);
+
+createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
   return (
     <>        
       <div className="flex min-h-full flex-col mt-11 justify-center py-12 sm:px-6 lg:px-14 ">
