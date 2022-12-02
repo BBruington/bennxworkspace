@@ -1,4 +1,4 @@
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../libs/firebase/firebase";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useState } from "react";
