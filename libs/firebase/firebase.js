@@ -7,7 +7,9 @@ import {
   signInWithRedirect, 
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
-  signInWithEmailAndPassword, } from 'firebase/auth';
+  signInWithEmailAndPassword,
+  signOut,
+ } from 'firebase/auth';
   import { 
     getFirestore } from 'firebase/firestore';
 
@@ -63,4 +65,12 @@ export const signInWithEmail = (email, password) => {
     const errorMessage = error.message;
   });
 
+}
+
+export const signOutUser = () => {
+  signOut(auth).then(() => {
+    // Sign-out successful.
+  }).catch((error) => {
+    // An error happened.
+  });
 }
