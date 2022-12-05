@@ -1,6 +1,4 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
 import { signUpWithEmail } from "../../../libs/firebase/firebase";
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { useState } from "react";
 
 const defaultFormFields = {
@@ -11,7 +9,6 @@ const defaultFormFields = {
 
 export default function SignUpForm() {
 
-  // const [user, loading] = useAuthState(auth);
   const [formFields, setFormFields] = useState(defaultFormFields);
   const {confirmPassword, signUpPassword, signUpEmail} = formFields;
 
@@ -33,10 +30,7 @@ export default function SignUpForm() {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-
     setFormFields({ ...formFields, [name]: value });
-    console.log(value)
-    console.log(formFields)
   };
 
 

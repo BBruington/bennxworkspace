@@ -6,7 +6,8 @@ import {
   signInWithPopup, 
   signInWithRedirect, 
   GoogleAuthProvider,
-  createUserWithEmailAndPassword } from 'firebase/auth';
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword, } from 'firebase/auth';
   import { 
     getFirestore } from 'firebase/firestore';
 
@@ -49,4 +50,17 @@ export const signUpWithEmail = (email, password) => {
     const errorMessage = error.message;
     // ..
   });
+}
+export const signInWithEmail = (email, password) => {
+  signInWithEmailAndPassword(auth, email, password)
+  // .then((userCredential) => {
+  //   // Signed in 
+  //   const user = userCredential.user;
+  //   // ...
+  // })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  });
+
 }
