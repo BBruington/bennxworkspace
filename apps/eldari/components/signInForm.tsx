@@ -1,5 +1,4 @@
 import { signInWithEmail } from "../../../libs/firebase/firebase";
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { useState } from "react";
 
 const defaultFormFields = {
@@ -8,7 +7,6 @@ const defaultFormFields = {
 }
 
 export default function SignInForm() {
-  const [user, loading] = useAuthState(auth);
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { password, email} = formFields;
 
@@ -20,16 +18,7 @@ export default function SignInForm() {
     e.preventDefault();
 
     signInWithEmail(email, password)
-  // .then((userCredential) => {
-  //   // Signed in 
-  //   const user = userCredential.user;
-  //   // ...
-  // })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // ..
-  });
+ 
   }
 
   const handleChange = (event) => {
