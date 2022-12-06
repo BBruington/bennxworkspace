@@ -1,6 +1,6 @@
 
 
-export default function NoteSideBar() {
+export default function NoteSideBar({notes}) {
 
   return (
     <>
