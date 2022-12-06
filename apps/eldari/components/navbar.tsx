@@ -23,7 +23,7 @@ const NavBar = () => {
 
   return (
     <div className="shadow bg-white ">
-      <div className="h-16 mx-auto px-5 flex items-center justify-between">
+      <div className="h-17 my-3 pb-3 mx-auto px-5 flex items-center justify-between">
           <a className="text-2xl hover:text-cyan-500 transition-colors cursor-pointer" onClick={handleOnClickHome}>
             <Image src='/icons/favicon_io/favicon-32x32.png' height={32} width={32} alt='github icon'/>
           </a>

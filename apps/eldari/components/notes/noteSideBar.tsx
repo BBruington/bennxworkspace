@@ -4,7 +4,7 @@ export default function NoteSideBar() {
 
   return (
     <>
-      <div className="w-2/6 h-30 border-r-2 border-r-gray-200 border-b-gray-200 h-100v">
+      <div className="w-2/6 h-30 border-r-2 border-r-gray-200 border-b-2 h-90v">
         <div className="flex justify-between p-4">
           <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-2xl lg:text-3xl m-0">Notes</h1>
 
