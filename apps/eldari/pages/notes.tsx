@@ -5,8 +5,10 @@ export default function Notes() {
 
   return (
     <>
-      <NoteSideBar />
-      <NoteMain />
+      <div className="flex justify-start">
+        <NoteSideBar />
+        <NoteMain />
+      </div>
     </>
   )
 }

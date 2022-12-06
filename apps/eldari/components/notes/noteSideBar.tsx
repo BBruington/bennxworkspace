@@ -4,21 +4,21 @@ export default function NoteSideBar() {
 
   return (
     <>
-      <div className="w-30% h-100vh border-r-gray-200">
-        <div className="flex space-between">
-          <h1>Notes</h1>
+      <div className="w-2/6 h-30 border-r-2 border-r-gray-200 border-b-gray-200 h-100v">
+        <div className="flex justify-between p-4">
+          <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-2xl lg:text-3xl m-0">Notes</h1>
 
-          <button>Add</button>
+          <button className="text-teal-600 font-bold">Add</button>
         </div>
         <div className="app-sidebar-notes">
-          <div className="app-sidebar-note">
-            <div className="sidebar-note-title">
+          <div className="p-4 cursor-pointer hover:bg-gray-200 focus:bg-teal-300">
+            <div className="flex justify-between">
               <strong>TITLE</strong>
-              <button>Delete</button>
+              <button className="text-orange-700 font-bold">Delete</button>
             </div>
-            <p>Note preview</p>
+            <p className="font-bold">Note preview</p>
 
-            <small className="note-meta">last modified [date]</small>
+            <small className="font-light block">last modified [date]</small>
           </div>
         </div>
 
