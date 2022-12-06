@@ -10,7 +10,18 @@ export default function NoteSideBar() {
 
           <button>Add</button>
         </div>
-        <div className=""></div>
+        <div className="app-sidebar-notes">
+          <div className="app-sidebar-note">
+            <div className="sidebar-note-title">
+              <strong>TITLE</strong>
+              <button>Delete</button>
+            </div>
+            <p>Note preview</p>
+
+            <small className="note-meta">last modified [date]</small>
+          </div>
+        </div>
+
       </div>
     </>
   )

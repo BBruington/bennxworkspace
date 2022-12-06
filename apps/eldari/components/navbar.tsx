@@ -10,6 +10,7 @@ const NavBar = () => {
     {name: 'Sessions'},
     {name: 'NPCS'},
     {name: 'Login'},
+    {name: 'Notes'},
 
   ]
 
