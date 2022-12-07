@@ -6,20 +6,26 @@ import { useState } from 'react';
 export default function Notes() {
   const [notes, setNotes] = useState([])
 
+  const deleteNote = () => {
+    
+  }
+
   const addNote = () => {
 
     const newNote = {
-      id: uuid,
-      title:
-      body:
-      lastModified:
-    }
+      id: uuid(),
+      title: "Untitled Note",
+      body: "",
+      lastModified: Date.now(),
+    };
+
+    setNotes(newNote, ...notes)
   }
 
   return (
     <>
       <div className="flex justify-start">
-        <NoteSideBar notes={notes} addNote={addNote}/>
+          <NoteSideBar notes={notes} addNote={addNote} deleteNote={deleteNote}/>
         <NoteMain />
       </div>
     </>

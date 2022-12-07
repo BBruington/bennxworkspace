@@ -1,6 +1,6 @@
 
 
-export default function NoteSideBar({notes, addNote}) {
+export default function NoteSideBar({notes, addNote, deleteNote}) {
 
   return (
     <>
@@ -14,12 +14,15 @@ export default function NoteSideBar({notes, addNote}) {
           {notes.map((note) => {
             <div className="p-4 cursor-pointer hover:bg-gray-200 focus:bg-teal-300">
               <div className="flex justify-between">
-                <strong>TITLE</strong>
-                <button className="text-orange-700 font-bold">Delete</button>
+                <strong>{note.title}</strong>
+                <button onClick={() => deleteNote(note.id)} className="text-orange-700 font-bold">Delete</button>
               </div>
-              <p className="font-bold">Note preview</p>
+              <p className="font-bold">{note.body && note.body.subStr(0, 100) + '...'}</p>
 
-              <small className="font-light block">last modified [date]</small>
+              <small className="font-light block">last modified {new Date(note.lastModified).toLocaleDateString("en-US", {
+                hour: "2-digit",
+                minute: "2-digit",
+              })}</small>
             </div>
           })}
         </div>
