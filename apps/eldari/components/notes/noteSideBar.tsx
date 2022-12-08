@@ -14,7 +14,7 @@ export default function NoteSideBar(props) {
         </div>
         <div className="app-sidebar-notes">
           {notes.map((note) => (
-            <div key={note.id} className="p-4 cursor-pointer hover:bg-gray-200 focus:bg-teal-300">
+            <div key={note.id} className="p-4 cursor-pointer hover:bg-gray-200" onClick={() => setActiveNote(note.id)}>
               <div className="flex justify-between">
                 <strong>{note.title}</strong>
                 <button onClick={() => deleteNote(note.id)} className="text-orange-700 font-bold">Delete</button>

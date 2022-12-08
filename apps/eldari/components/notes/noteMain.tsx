@@ -1,6 +1,8 @@
 
 
-export default function NoteMain() {
+export default function NoteMain(props) {
+
+  const {activeNote} = props
 
   return (
     <>

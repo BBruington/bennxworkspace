@@ -23,6 +23,10 @@ export default function Notes() {
     setNotes([newNote, ...notes])
   }
 
+  const getActiveNote = () => {
+    return notes.find((note) => note.id === activeNote)
+  }
+
   return (
     <>
       <div className="flex justify-start">
@@ -33,7 +37,9 @@ export default function Notes() {
           activeNote={activeNote}
           setActiveNote={setActiveNote}
           />
-        <NoteMain />
+          <NoteMain 
+          activeNote={activeNote}
+          />
       </div>
     </>
   )
