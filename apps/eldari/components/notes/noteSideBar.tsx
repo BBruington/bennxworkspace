@@ -1,6 +1,8 @@
 
 
-export default function NoteSideBar({notes, addNote, deleteNote, activeNote, setActiveNote}) {
+export default function NoteSideBar(props) {
+
+  const {notes, addNote, deleteNote, activeNote, setActiveNote} = props
 
   return (
     <>
@@ -11,7 +13,7 @@ export default function NoteSideBar({notes, addNote, deleteNote, activeNote, set
           <button onClick={addNote} className="text-teal-600 font-bold">Add</button>
         </div>
         <div className="app-sidebar-notes">
-          {notes.map((note) => {
+          {notes.map((note) => (
             <div className="p-4 cursor-pointer hover:bg-gray-200 focus:bg-teal-300">
               <div className="flex justify-between">
                 <strong>{note.title}</strong>
@@ -24,7 +26,7 @@ export default function NoteSideBar({notes, addNote, deleteNote, activeNote, set
                 minute: "2-digit",
               })}</small>
             </div>
-          })}
+          ))}
         </div>
 
       </div>

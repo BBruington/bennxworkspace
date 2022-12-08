@@ -20,7 +20,7 @@ export default function Notes() {
       lastModified: Date.now(),
     };
 
-    setNotes(newNote, ...notes)
+    setNotes([newNote, ...notes])
   }
 
   return (
