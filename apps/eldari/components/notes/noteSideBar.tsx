@@ -1,6 +1,6 @@
 
 
-export default function NoteSideBar({notes, addNote, deleteNote}) {
+export default function NoteSideBar({notes, addNote, deleteNote, activeNote, setActiveNote}) {
 
   return (
     <>

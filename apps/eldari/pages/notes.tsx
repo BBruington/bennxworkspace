@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 export default function Notes() {
   const [notes, setNotes] = useState([])
+  const [activeNote, setActiveNote] = useState(false)
 
   const deleteNote = (idToDelete) => {
     setNotes(notes.filter((note) => note.id !== idToDelete));
@@ -25,7 +26,13 @@ export default function Notes() {
   return (
     <>
       <div className="flex justify-start">
-          <NoteSideBar notes={notes} addNote={addNote} deleteNote={deleteNote}/>
+          <NoteSideBar 
+          notes={notes} 
+          addNote={addNote} 
+          deleteNote={deleteNote} 
+          activeNote={activeNote}
+          setActiveNote={setActiveNote}
+          />
         <NoteMain />
       </div>
     </>
