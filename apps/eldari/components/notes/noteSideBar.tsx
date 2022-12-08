@@ -19,7 +19,7 @@ export default function NoteSideBar({notes, addNote, deleteNote}) {
               </div>
               <p className="font-bold">{note.body && note.body.subStr(0, 100) + '...'}</p>
 
-              <small className="font-light block">last modified {new Date(note.lastModified).toLocaleDateString("en-US", {
+              <small className="font-light block">last modified: {new Date(note.lastModified).toLocaleDateString("en-US", {
                 hour: "2-digit",
                 minute: "2-digit",
               })}</small>

@@ -44,6 +44,15 @@
     "combat": "combat details",
     "npcs": "npcs are here",
     "roleplay": "roleplay details"
+    },
+    { 
+    "session": 6, 
+    "description": "description 4", 
+    "intro": "intro 4", 
+    "title": "Clearing an Infestation",     
+    "combat": "combat details",
+    "npcs": "npcs are here",
+    "roleplay": "roleplay details"
     }
   ]  
 }

@@ -6,8 +6,8 @@ import { useState } from 'react';
 export default function Notes() {
   const [notes, setNotes] = useState([])
 
-  const deleteNote = () => {
-    
+  const deleteNote = (idToDelete) => {
+    setNotes(notes.filter((note) => note.id !== idToDelete));
   }
 
   const addNote = () => {
