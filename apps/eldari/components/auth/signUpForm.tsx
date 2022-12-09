@@ -37,7 +37,7 @@ export default function SignUpForm() {
 
   return (
     <>        
-      <div className="flex w-2/6 bg-gray-100 min-h-full flex-col  justify-center pb-5 sm:px-6 lg:px-14 ">
+      <div className="flex lg:w-2/6 bg-gray-100 min-h-full flex-col  justify-center pb-5 sm:px-6 lg:px-14 ">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">          
           <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Sign Up</h2>          
         </div>

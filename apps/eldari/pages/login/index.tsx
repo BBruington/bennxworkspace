@@ -4,7 +4,7 @@ export default function LoginPage() {
 
 
   return (
-    <div className="flex lg:justify-evenly">
+    <div className="flex justify-evenly">
       <SignInForm />
     </div>
   )
