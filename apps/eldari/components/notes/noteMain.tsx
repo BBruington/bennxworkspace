@@ -1,4 +1,4 @@
-
+import ReactMarkdown from "react-markdown"
 
 export default function NoteMain(props) {
 
@@ -46,7 +46,7 @@ export default function NoteMain(props) {
 
           <h1 className="p-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-2xl lg:text-3xl m-0">Title Example</h1>
 
-          <div className="markdown-preview p-4 font-bold">Example Text</div>
+          <ReactMarkdown className="markdown-preview p-4 font-bold">Example Text</ReactMarkdown>
 
         </div> 
         </>
