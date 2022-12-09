@@ -23,7 +23,19 @@ export default function Notes() {
     setNotes([newNote, ...notes])
   }
 
+  const updateNote = (updatedNote) => {
+    const updatedNotesArray = notes.map((note) => {
+      if(note.id === activeNote) {
+        return updatedNote;
+      }
+      return note;
+    })
+
+    setNotes(updatedNotesArray)
+  }
+
   const getActiveNote = () => {
+
     return notes.find((note) => note.id === activeNote)
   }
 
@@ -38,7 +50,8 @@ export default function Notes() {
           setActiveNote={setActiveNote}
           />
           <NoteMain 
-          activeNote={activeNote}
+          activeNote={getActiveNote()}
+          updateNote={updateNote}
           />
       </div>
     </>
