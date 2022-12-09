@@ -4,13 +4,10 @@ export default function NoteSideBar(props) {
 
   const handleNoteOnClick = (note) => {
     setActiveNote(note.id)
-    if(editMode){
-      setEditMode(false)
-    }
   }
 
   const handleEditMode = () => {
-    if(!editMode) setEditMode(true)
+    setEditMode(!editMode)
   }
 
   const {notes, addNote, deleteNote, activeNote, setActiveNote, setEditMode, editMode} = props
@@ -20,8 +17,10 @@ export default function NoteSideBar(props) {
       <div className="w-2/6 overflow-auto border-r-2 border-r-gray-200 border-b-2 h-90v">
         <div className="flex justify-between p-4">
           <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-2xl lg:text-3xl m-0">Notes</h1>
-
-          <button onClick={addNote} className="text-teal-600 hover:text-teal-400 font-bold">Add</button>
+          <div>
+            <button onClick={handleEditMode} className="text-green-700 hover:text-green-500 font-bold mr-5">Edit Note</button>
+            <button onClick={addNote} className="text-teal-600 hover:text-teal-400 font-bold">Add Note</button>
+          </div>
         </div>
         <div className="app-sidebar-notes">
           {notes.map((note) => (
@@ -37,7 +36,6 @@ export default function NoteSideBar(props) {
                   })}</small>
                 </div>
                   <div className="mt-2">
-                    <button onClick={handleEditMode} className="text-green-700 hover:text-green-500 font-bold mr-3">Edit</button>
                     <button onClick={() => deleteNote(note.id)} className="text-orange-700 hover:text-orange-500 font-bold">Delete</button>
                   </div>
               </div>
