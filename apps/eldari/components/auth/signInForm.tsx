@@ -1,5 +1,6 @@
 import { signInWithEmail } from "../../../../libs/firebase/firebase";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 const defaultFormFields = {
   email: '',
@@ -7,6 +8,14 @@ const defaultFormFields = {
 }
 
 export default function SignInForm() {
+
+  const router = useRouter();
+
+  const handleOnClickSignUp = (e) => {
+    e.preventDefault();
+    router.push('/login/signup');
+  };
+
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { password, email} = formFields;
 
@@ -31,9 +40,9 @@ export default function SignInForm() {
 
   return (
     <>        
-      <div className="flex min-h-full flex-col mb-11 justify-center py-12 sm:px-6 lg:px-14 ">
+      <div className="flex w-2/6 bg-gray-100 flex-col justify-center pb-5  sm:px-6 lg:px-14 ">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">          
-          <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Sign in</h2>          
+          <h2 className="text-center text-3xl font-bold tracking-tight mt-5 text-gray-900">Sign in</h2>          
         </div>
 
         <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
@@ -86,12 +95,11 @@ export default function SignInForm() {
                   </label>
                 </div>
 
-                <div className="text-sm">
-                  <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-                    Forgot your password?
-                  </a>
-                </div>
               </div> */}
+              <div className="flex text-sm justify-between">
+                <div>Don&apos;t have an account?</div>
+                <div onClick={handleOnClickSignUp} className="text-indigo-600 hover:text-indigo-500 cursor-pointer mr-5">Sign up</div>
+              </div>
 
               <div>
                 <button
