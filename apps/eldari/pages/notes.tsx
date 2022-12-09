@@ -6,6 +6,7 @@ import { useState } from 'react';
 export default function Notes() {
   const [notes, setNotes] = useState([])
   const [activeNote, setActiveNote] = useState(false)
+  const [editMode,setEditMode] = useState(false)
 
   const deleteNote = (idToDelete) => {
     setNotes(notes.filter((note) => note.id !== idToDelete));
@@ -48,10 +49,14 @@ export default function Notes() {
           deleteNote={deleteNote} 
           activeNote={activeNote}
           setActiveNote={setActiveNote}
+          editMode={editMode}
+          setEditMode={setEditMode}
           />
           <NoteMain 
           activeNote={getActiveNote()}
           updateNote={updateNote}
+          editMode={editMode}
+          
           />
       </div>
     </>
