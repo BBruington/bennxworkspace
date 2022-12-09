@@ -6,7 +6,7 @@ export default function NoteSideBar(props) {
 
   return (
     <>
-      <div className="w-2/6 border-r-2 border-r-gray-200 border-b-2 h-90v">
+      <div className="w-2/6 overflow-auto border-r-2 border-r-gray-200 border-b-2 h-90v">
         <div className="flex justify-between p-4">
           <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-2xl lg:text-3xl m-0">Notes</h1>
 
@@ -19,7 +19,7 @@ export default function NoteSideBar(props) {
                 <strong>{note.title}</strong>
                 <button onClick={() => deleteNote(note.id)} className="text-orange-700 font-bold">Delete</button>
               </div>
-              <p className="font-bold">{note.body && note.body.substr(0, 100) + '...'}</p>
+              <p className="font-bold">{note.body && note.body.substr(0, 50) + '...'}</p>
 
               <small className="font-light block">last modified: {new Date(note.lastModified).toLocaleDateString("en-US", {
                 hour: "2-digit",

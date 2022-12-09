@@ -25,11 +25,11 @@ export default function NoteMain(props) {
 
         </div>
 
-        <div className="app-main-note-preview m-4 bg-gray-100 h-40v">
+        <div className="overflow-auto m-4 bg-gray-100 h-40v">
 
           <h1 className="p-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-2xl lg:text-3xl m-0">{activeNote.title}</h1>
 
-          <div className="markdown-preview p-4 font-bold">{activeNote.body}</div>
+          <ReactMarkdown className=" p-4 font-bold">{activeNote.body}</ReactMarkdown>
 
         </div> 
         </>
