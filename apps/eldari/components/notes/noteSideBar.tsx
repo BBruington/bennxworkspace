@@ -9,6 +9,10 @@ export default function NoteSideBar(props) {
     }
   }
 
+  const handleEditMode = () => {
+    if(!editMode) setEditMode(true)
+  }
+
   const {notes, addNote, deleteNote, activeNote, setActiveNote, setEditMode, editMode} = props
 
   return (
@@ -33,7 +37,7 @@ export default function NoteSideBar(props) {
                   })}</small>
                 </div>
                   <div className="mt-2">
-                    <button onClick={() => setEditMode(true)} className="text-green-700 hover:text-green-500 font-bold mr-3">Edit</button>
+                    <button onClick={handleEditMode} className="text-green-700 hover:text-green-500 font-bold mr-3">Edit</button>
                     <button onClick={() => deleteNote(note.id)} className="text-orange-700 hover:text-orange-500 font-bold">Delete</button>
                   </div>
               </div>
