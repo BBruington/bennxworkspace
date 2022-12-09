@@ -38,26 +38,19 @@ export default function NoteMain(props) {
         {
           !activeNote && (
         <>
-        <div className="h-40v m-4">
-          
-          <input className="flex block mb-4 p-2 w-full h-8" type="text" placeholder="Title" id="title" autoFocus />
+          <div className="m-4 mt-7 bg-gray-100 h-80v">
 
-          <textarea className="flex block mb-4 p-2 w-full h-30v" id="body" placeholder="Write your note here"/>
+          <h1 className="p-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-2xl lg:text-3xl m-0">Click on an Existing Note or Add a New One</h1>
 
-        </div>
-        <div className="m-4 bg-gray-100 h-40v">
+          <ReactMarkdown className="p-4">This is where your note would appear</ReactMarkdown>
 
-          <h1 className="p-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-2xl lg:text-3xl m-0">Title Example</h1>
-
-          <ReactMarkdown className="p-4">Example Text</ReactMarkdown>
-
-        </div> 
+          </div> 
         </>
         )}
         {
         !editMode && activeNote && (
         
-        <div className="m-4 bg-gray-100 h-80v">
+        <div className="m-4 mt-7 bg-gray-100 h-80v">
 
           <h1 className="p-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-2xl lg:text-3xl m-0">{activeNote.title}</h1>
 
