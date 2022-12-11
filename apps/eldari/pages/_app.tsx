@@ -6,6 +6,7 @@ import Footer from '../components/footer';
 import Head from 'next/head';
 import './styles.css';
 
+
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
     <>
