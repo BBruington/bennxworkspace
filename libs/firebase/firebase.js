@@ -1,6 +1,5 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import { 
   getAuth, 
   signInWithPopup, 
@@ -26,6 +25,8 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth();
+export const user = auth.currentUser;
+export const db = getFirestore(app);
 
 const googleProvider = new GoogleAuthProvider();
 
@@ -35,9 +36,8 @@ googleProvider.setCustomParameters({
 
 export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider);
 
-export const signInWithGoogleRedirect = () => signInWithRedirect( auth, googleProvider);
+export const signInWithGoogleRedirect = () => signInWithRedirect(auth, googleProvider);
 
-export const db = getFirestore();
 
 //sign up email
 export const signUpWithEmail = (email, password) => {
@@ -45,7 +45,7 @@ export const signUpWithEmail = (email, password) => {
   // .then((userCredential) => {
   //   // Signed in 
   //   const user = userCredential.user;
-  //   // ...
+  //   console.log("user", user)
   // })
   .catch((error) => {
     const errorCode = error.code;

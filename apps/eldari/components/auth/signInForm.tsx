@@ -1,8 +1,8 @@
-import { signInWithEmail } from "../../../../libs/firebase/firebase";
+import { signInWithEmail, user } from "../../../../libs/firebase/firebase";
 import { useState } from "react";
 import { useRouter } from "next/router";
 
-const defaultFormFields = {
+const defaultSignInFields = {
   email: '',
   password: '',
 }
@@ -16,17 +16,18 @@ export default function SignInForm() {
     router.push('/login/signup');
   };
 
-  const [formFields, setFormFields] = useState(defaultFormFields);
+  const [formFields, setFormFields] = useState(defaultSignInFields);
   const { password, email} = formFields;
 
   const resetFormFields = () => {
-    setFormFields(defaultFormFields);
+    setFormFields(defaultSignInFields);
   };
 
-  const handleSubmit = async (e) => {
+  const handleSignIn = async (e) => {
     e.preventDefault();
 
-    signInWithEmail(email, password)
+    const me = await signInWithEmail(email, password)
+    console.log("me", me)
 
     resetFormFields()
  
@@ -40,14 +41,15 @@ export default function SignInForm() {
 
   return (
     <>        
-      <div className="flex lg:w-2/6 bg-gray-100 flex-col justify-center pb-5  sm:px-6 lg:px-14 ">
+      <div className="flex lg:w-2/6 bg-gray-100 flex-col  justify-center pb-10  sm:px-6 lg:px-14 ">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">          
           <h2 className="text-center text-3xl font-bold tracking-tight mt-5 text-gray-900">Sign in</h2>          
         </div>
+        <button onClick={() => console.log("user", user)}>user</button>
 
         <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
           <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-            <form className="space-y-6" onSubmit={handleSubmit}>
+            <form className="space-y-6" onSubmit={handleSignIn}>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                   Email address
@@ -76,6 +78,8 @@ export default function SignInForm() {
                     name="password"
                     type="password"
                     autoComplete="current-password"
+                    onChange={handleChange}
+                    value={password}
                     required
                     className="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                   />
@@ -98,7 +102,7 @@ export default function SignInForm() {
               </div> */}
               <div className="flex text-sm justify-between">
                 <div>Don&apos;t have an account?</div>
-                <div onClick={handleOnClickSignUp} className="text-indigo-600 hover:text-indigo-500 cursor-pointer mr-5">Sign up</div>
+                <div onClick={handleOnClickSignUp} className="text-indigo-600 hover:text-indigo-500 cursor-pointer ml-1 mr-5">Sign up</div>
               </div>
 
               <div>

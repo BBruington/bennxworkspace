@@ -1,7 +1,9 @@
-import { signUpWithEmail } from "../../../../libs/firebase/firebase";
+import { signUpWithEmail, db } from "../../../../libs/firebase/firebase";
 import { useState } from "react";
+import {collection, addDoc} from "firebase/firestore";
 
-const defaultFormFields = {
+
+const defaultSignUpFields = {
   signUpEmail: '',
   signUpPassword: '',
   confirmPassword: ''
@@ -9,14 +11,20 @@ const defaultFormFields = {
 
 export default function SignUpForm() {
 
-  const [formFields, setFormFields] = useState(defaultFormFields);
+  const usersCollectionRef = collection(db, "users")
+
+  const [formFields, setFormFields] = useState(defaultSignUpFields);
   const {confirmPassword, signUpPassword, signUpEmail} = formFields;
+  
+  const createUser = async () => {
+    await addDoc(usersCollectionRef, {email: signUpEmail})
+  }
 
   const resetFormFields = () => {
-    setFormFields(defaultFormFields);
+    setFormFields(defaultSignUpFields);
   };
 
-  const handleSubmit = async (e) => {
+  const handleSignUp = async (e) => {
     e.preventDefault();
 
     if (signUpPassword !== confirmPassword) {
@@ -37,14 +45,14 @@ export default function SignUpForm() {
 
   return (
     <>        
-      <div className="flex lg:w-2/6 bg-gray-100 min-h-full flex-col  justify-center pb-5 sm:px-6 lg:px-14 ">
+      <div className="flex lg:w-2/6 bg-gray-100 min-h-full flex-col pb-10 justify-center sm:px-6 lg:px-14 ">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">          
           <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Sign Up</h2>          
         </div>
         
         <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md ">
           <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-            <form className="space-y-6" onSubmit={handleSubmit}>
+            <form className="space-y-6" onSubmit={handleSignUp}>
               <div>
                 <label htmlFor="signUpEmail" className="block text-sm font-medium text-gray-700">
                   Email address

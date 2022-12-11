@@ -1,20 +1,33 @@
 import Image from "next/image";
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 import Link from "next/link";
+import {useState, useEffect} from "react";
+import { db, user } from "../../../libs/firebase/firebase";
+import {collection, getDocs} from "firebase/firestore";  
 
 const NavBar = () => {
+
+  const router = useRouter();
+  const [users, setUsers] = useState(user);
+  const usersCollectionRef = collection(db, "users")
+
+  // useEffect(() => {
+  //   const getUsers = async () => {
+  //     const data = await getDocs(usersCollectionRef)
+  //     setUsers(data.docs.map((doc) => ({...doc.data(), id: doc.id})))
+  //   }
+
+  //   getUsers();
+  // },[user]) 
 
   const pageLinks = [
     {name: 'Locations'},
     {name: 'Deities'},
     {name: 'Sessions'},
     {name: 'NPCS'},
-    {name: 'Login'},
-    {name: 'Notes'},
-
+    {name: 'Notes'}
   ]
 
-  const router = useRouter();
   
   const handleOnClickHome = (e) => {
     e.preventDefault();
@@ -35,7 +48,25 @@ const NavBar = () => {
                 {links.name}
               </Link>
             </li>
-          ))}            
+          ))}
+          { !user ?
+            <li>
+            <Link href={`/login`} className="hover:text-cyan-500 transition-colors cursor-pointer">
+              Login
+            </Link>
+          </li>
+          :
+          <li className="hover:text-cyan-500 transition-colors cursor-pointer">
+              Log out
+          </li>
+          }
+          {
+            user && (
+            <li className="hover:text-cyan-500 transition-colors cursor-pointer">
+              {user.email}
+            </li>
+            )
+          }
           </ul>
       </div>
     </div>
