@@ -1,10 +1,9 @@
 import Image from "next/image";
 import { useRouter } from 'next/router';
 import Link from "next/link";
-import {useState, useEffect} from "react";
-import { db } from "../../../libs/firebase/firebase";
-import {collection, getDocs} from "firebase/firestore";  
+import {useState} from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { signOutUser } from "../../../libs/firebase/firebase";
 
 
 
@@ -12,19 +11,18 @@ const NavBar = () => {
 
   const router = useRouter();
   const [users, setUsers] = useState({});
-  const usersCollectionRef = collection(db, "users")
+  //const usersCollectionRef = collection(db, "users")
   const auth = getAuth();
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/firebase.User
+    // User is signed in
     console.log(user)
     setUsers(user);
     const uid = user.uid;
-    // ...
+ 
   } else {
     // User is signed out
-    // ...
+
   }
 });
 
@@ -73,7 +71,7 @@ onAuthStateChanged(auth, (user) => {
             </Link>
           </li>
           :
-          <li className="hover:text-cyan-500 transition-colors cursor-pointer">
+          <li onClick={signOutUser} className="hover:text-cyan-500 transition-colors cursor-pointer">
               Log out
           </li>
           }
