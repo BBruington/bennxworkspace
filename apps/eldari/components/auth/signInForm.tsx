@@ -1,4 +1,4 @@
-import { signInWithEmail, user } from "../../../../libs/firebase/firebase";
+import { signInWithEmail } from "../../../../libs/firebase/firebase";
 import { useState } from "react";
 import { useRouter } from "next/router";
 
@@ -44,7 +44,6 @@ export default function SignInForm() {
         <div className="sm:mx-auto sm:w-full sm:max-w-md">          
           <h2 className="text-center text-3xl font-bold tracking-tight mt-5 text-gray-900">Sign in</h2>          
         </div>
-        <button onClick={() => console.log("user", user)}>user</button>
 
         <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
           <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">

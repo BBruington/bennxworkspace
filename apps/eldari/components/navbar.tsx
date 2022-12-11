@@ -21,7 +21,7 @@ const NavBar = () => {
  
   } else {
     // User is signed out
-
+    setUsers({})
   }
 });
 
@@ -43,8 +43,8 @@ const NavBar = () => {
   ]
 
   const handleLogOut = async () => {
-    await signOutUser()
-    setUsers({})
+    await signOutUser();
+    //setUsers({})
   }
   
   const handleOnClickHome = (e) => {
@@ -79,7 +79,7 @@ const NavBar = () => {
           </li>
           }
           {
-            users && (
+            users.email && (
             <li className="hover:text-cyan-500 transition-colors cursor-pointer">
               {users.email}
             </li>
