@@ -26,8 +26,7 @@ export default function SignInForm() {
   const handleSignIn = async (e) => {
     e.preventDefault();
 
-    const me = await signInWithEmail(email, password)
-    console.log("me", me)
+    await signInWithEmail(email, password)
 
     resetFormFields()
  

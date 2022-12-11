@@ -13,10 +13,9 @@ const NavBar = () => {
   const [users, setUsers] = useState({});
   //const usersCollectionRef = collection(db, "users")
   const auth = getAuth();
-onAuthStateChanged(auth, (user) => {
+  onAuthStateChanged(auth, (user) => {
   if (user) {
     // User is signed in
-    console.log(user)
     setUsers(user);
     const uid = user.uid;
  
@@ -43,6 +42,10 @@ onAuthStateChanged(auth, (user) => {
     {name: 'Notes'}
   ]
 
+  const handleLogOut = async () => {
+    await signOutUser()
+    setUsers({})
+  }
   
   const handleOnClickHome = (e) => {
     e.preventDefault();
@@ -64,15 +67,15 @@ onAuthStateChanged(auth, (user) => {
               </Link>
             </li>
           ))}
-          { !users ?
-            <li>
+          { users.email ?
+          <li onClick={handleLogOut} className="hover:text-cyan-500 transition-colors cursor-pointer">
+              Log out
+          </li>
+          :
+          <li>
             <Link href={`/login`} className="hover:text-cyan-500 transition-colors cursor-pointer">
               Login
             </Link>
-          </li>
-          :
-          <li onClick={signOutUser} className="hover:text-cyan-500 transition-colors cursor-pointer">
-              Log out
           </li>
           }
           {
