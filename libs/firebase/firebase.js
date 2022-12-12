@@ -11,6 +11,7 @@ import {
   onAuthStateChanged
  } from 'firebase/auth';
   import { 
+    collection,
     getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
@@ -26,8 +27,8 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth();
-export const user = auth.currentUser;
 export const db = getFirestore(app);
+export const notesCollectionRef = collection(db, "user notes")
 
 const googleProvider = new GoogleAuthProvider();
 

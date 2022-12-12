@@ -1,12 +1,25 @@
 import NoteSideBar from '../components/notes/noteSideBar';
 import NoteMain from '../components/notes/noteMain';
 import uuid from 'react-uuid';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { notesCollectionRef } from "../../../libs/firebase/firebase";
+import { getDocs } from "firebase/firestore";
 
 export default function Notes() {
   const [notes, setNotes] = useState([])
   const [activeNote, setActiveNote] = useState(false)
   const [editMode,setEditMode] = useState(false)
+
+  useEffect(() => {
+    const getNotes = async () => {
+      const data = await getDocs(notesCollectionRef)
+      setNotes(data.docs.map((doc) => ({...doc.data(), id: doc.id})))
+      console.log("data", data)
+      console.log("notes", notes)
+    }
+
+    getNotes();
+  },[]) 
 
   const deleteNote = (idToDelete) => {
     setNotes(notes.filter((note) => note.id !== idToDelete));
