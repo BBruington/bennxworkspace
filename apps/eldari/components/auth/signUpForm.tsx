@@ -1,5 +1,6 @@
-import { signUpWithEmail, db } from "../../../../libs/firebase/firebase";
-import { useState } from "react";
+import { signUpWithEmail, db, getCurrentUser } from "../../../../libs/firebase/firebase";
+import { useState, useEffect } from "react";
+import {useRouter} from "next/router";
 import {collection, addDoc} from "firebase/firestore";
 
 
@@ -12,9 +13,19 @@ const defaultSignUpFields = {
 export default function SignUpForm() {
 
   const usersCollectionRef = collection(db, "users")
-
   const [formFields, setFormFields] = useState(defaultSignUpFields);
   const {confirmPassword, signUpPassword, signUpEmail} = formFields;
+  const router = useRouter();
+  
+  useEffect(()=>{
+    const handleGetUser = async () => {
+      const currentUser = await getCurrentUser();
+      if(currentUser !== null) {
+        router.push('/')
+      } 
+    }
+    handleGetUser()
+  },[])
   
   const createUser = async () => {
     await addDoc(usersCollectionRef, {email: signUpEmail})
@@ -32,7 +43,7 @@ export default function SignUpForm() {
       return;
     }
 
-    await signUpWithEmail(signUpEmail, signUpPassword);
+    await signUpWithEmail(signUpEmail, signUpPassword).then(() => {router.reload()})
     resetFormFields();
   }
 

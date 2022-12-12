@@ -8,6 +8,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
+  onAuthStateChanged
  } from 'firebase/auth';
   import { 
     getFirestore } from 'firebase/firestore';
@@ -40,8 +41,9 @@ export const signInWithGoogleRedirect = () => signInWithRedirect(auth, googlePro
 
 
 //sign up email
-export const signUpWithEmail = (email, password) => {
-  createUserWithEmailAndPassword(auth, email, password)
+export const signUpWithEmail = async (email, password) => {
+  if (!email || !password) return;
+  return await createUserWithEmailAndPassword(auth, email, password)
   // .then((userCredential) => {
   //   // Signed in 
   //   const user = userCredential.user;
@@ -53,8 +55,9 @@ export const signUpWithEmail = (email, password) => {
     // ..
   });
 }
-export const signInWithEmail = (email, password) => {
-  signInWithEmailAndPassword(auth, email, password)
+export const signInWithEmail = async (email, password) => {
+  if (!email || !password) return;
+  return await signInWithEmailAndPassword(auth, email, password)
   // .then((userCredential) => {
   //   // Signed in 
   //   const user = userCredential.user;
@@ -67,10 +70,26 @@ export const signInWithEmail = (email, password) => {
 
 }
 
-export const signOutUser = () => {
-  signOut(auth).then(() => {
+export const signOutUser = async () => {
+  return await signOut(auth)//.then(() => {
     // Sign-out successful.
-  }).catch((error) => {
+  //})
+  .catch((error) => {
     // An error happened.
   });
 }
+
+export const onAuthStateChangedListener = () => onAuthStateChanged(auth, callback);
+
+export const getCurrentUser = () => {
+  return new Promise((resolve, reject) => {
+    const unsubscribe = onAuthStateChanged(
+      auth,
+      (userAuth) => {
+        unsubscribe();
+        resolve(userAuth);
+      },
+      reject
+    );
+  });
+};

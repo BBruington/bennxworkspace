@@ -1,9 +1,8 @@
 import Image from "next/image";
 import { useRouter } from 'next/router';
 import Link from "next/link";
-import {useState} from "react";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { signOutUser } from "../../../libs/firebase/firebase";
+import {useState, useEffect} from "react";
+import { signOutUser, getCurrentUser, } from "../../../libs/firebase/firebase";
 
 
 
@@ -11,19 +10,20 @@ const NavBar = () => {
 
   const router = useRouter();
   const [users, setUsers] = useState({});
-  //const usersCollectionRef = collection(db, "users")
-  const auth = getAuth();
-  onAuthStateChanged(auth, (user) => {
-  if (user) {
-    // User is signed in
-    setUsers(user);
-    const uid = user.uid;
- 
-  } else {
-    // User is signed out
-    setUsers({})
-  }
-});
+
+  useEffect(()=>{
+    const handleGetUser = async () => {
+      const currentUser = await getCurrentUser();
+      if(currentUser !== null) {
+        setUsers(currentUser)
+      } else {setUsers({})}
+    }
+    handleGetUser()
+  },[])
+
+const handleUserInfo = () => {
+  console.log(users)
+}
 
   // useEffect(() => {
   //   const getUsers = async () => {
@@ -32,7 +32,7 @@ const NavBar = () => {
   //   }
 
   //   getUsers();
-  // },[user]) 
+  // },[]) 
 
   const pageLinks = [
     {name: 'Locations'},
@@ -44,7 +44,7 @@ const NavBar = () => {
 
   const handleLogOut = async () => {
     await signOutUser();
-    //setUsers({})
+    setUsers({})
   }
   
   const handleOnClickHome = (e) => {
@@ -54,6 +54,7 @@ const NavBar = () => {
 
   return (
     <div className="shadow bg-white ">
+      <button className="ml-4" onClick={handleUserInfo}>user info</button>
       <div className="h-17 my-3 pb-3 mx-auto px-5 flex items-center justify-between">
           <a className="text-2xl hover:text-cyan-500 transition-colors cursor-pointer" onClick={handleOnClickHome}>
             <Image src='/icons/favicon_io/favicon-32x32.png' height={32} width={32} alt='github icon'/>
@@ -67,19 +68,20 @@ const NavBar = () => {
               </Link>
             </li>
           ))}
-          { users.email ?
-          <li onClick={handleLogOut} className="hover:text-cyan-500 transition-colors cursor-pointer">
-              Log out
-          </li>
+          { users.email? (
+            <li onClick={handleLogOut} className="hover:text-cyan-500 transition-colors cursor-pointer">
+                Log out
+            </li>
+          )
           :
-          <li>
+          (<li>
             <Link href={`/login`} className="hover:text-cyan-500 transition-colors cursor-pointer">
               Login
             </Link>
-          </li>
+          </li>)
           }
           {
-            users.email && (
+            users.email&& (
             <li className="hover:text-cyan-500 transition-colors cursor-pointer">
               {users.email}
             </li>

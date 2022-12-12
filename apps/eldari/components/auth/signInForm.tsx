@@ -1,5 +1,5 @@
-import { signInWithEmail } from "../../../../libs/firebase/firebase";
-import { useState } from "react";
+import { signInWithEmail, getCurrentUser } from "../../../../libs/firebase/firebase";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
 const defaultSignInFields = {
@@ -10,9 +10,18 @@ const defaultSignInFields = {
 export default function SignInForm() {
 
   const router = useRouter();
+  useEffect(()=>{
+    const handleGetUser = async () => {
+      const currentUser = await getCurrentUser();
+      if(currentUser !== null) {
+        router.push('/')
+      } 
+    }
+    handleGetUser()
+  },[])
 
   const handleOnClickSignUp = (e) => {
-    e.preventDefault();
+    //e.preventDefault();
     router.push('/login/signup');
   };
 
@@ -26,7 +35,7 @@ export default function SignInForm() {
   const handleSignIn = async (e) => {
     e.preventDefault();
 
-    await signInWithEmail(email, password)
+    const signInUser = await signInWithEmail(email, password).then(() => {router.reload()})
 
     resetFormFields()
  
