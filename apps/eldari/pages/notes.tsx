@@ -13,9 +13,10 @@ export default function Notes() {
   useEffect(() => {
     const getNotes = async () => {
       const data = await getDocs(notesCollectionRef)
-      setNotes(data.docs.map((doc) => ({...doc.data(), id: doc.id})))
+      const noteData = data.docs.map((doc) => ({...doc.data(), id: doc.id}))
+      setNotes(noteData[0].notes)
       console.log("data", data)
-      console.log("notes", notes)
+      console.log("notes", notes) 
     }
 
     getNotes();

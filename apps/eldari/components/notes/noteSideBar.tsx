@@ -27,7 +27,7 @@ export default function NoteSideBar(props) {
             <div key={note.id} className="p-4 cursor-pointer hover:bg-gray-200" onClick={() => handleNoteOnClick(note)}>
               <div className="flex justify-between">
                 <div>
-                  <strong>{note.title}</strong>
+                  <strong>{note.title}</strong> 
                   <p className="">{note.body && note.body.substr(0, 50) + '...'}</p>
 
                   <small className="font-light block">last modified: {new Date(note.lastModified).toLocaleDateString("en-US", {
