@@ -9,6 +9,8 @@ const defaultSignInFields = {
 
 export default function SignInForm() {
 
+  
+
   const router = useRouter();
   useEffect(()=>{
     const handleGetUser = async () => {
@@ -34,8 +36,11 @@ export default function SignInForm() {
 
   const handleSignIn = async (e) => {
     e.preventDefault();
+    const currentUser = await getCurrentUser();
 
-    const signInUser = await signInWithEmail(email, password).then(() => {router.reload()})
+    if(currentUser !== null) {alert('You are already signed in'); return;}
+
+    const signInUser = await signInWithEmail(email, password).then(() => {router.push('/')})
     resetFormFields() 
   }
 

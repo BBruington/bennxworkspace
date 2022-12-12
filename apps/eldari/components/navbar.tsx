@@ -9,7 +9,7 @@ import { signOutUser, getCurrentUser, } from "../../../libs/firebase/firebase";
 const NavBar = () => {
 
   const router = useRouter();
-  const [users, setUsers] = useState({});
+  const [users, setUsers] = useState({});  
 
   useEffect(()=>{
     const handleGetUser = async () => {
@@ -19,7 +19,7 @@ const NavBar = () => {
       } else {setUsers({})}
     }
     handleGetUser()
-  },[])
+  },[router])
 
 const handleUserInfo = () => {
   console.log(users)

@@ -4,8 +4,6 @@ import 'react-notifications-component/dist/theme.css'
 import NavBar from '../components/navbar';
 import Footer from '../components/footer';
 import Head from 'next/head';
-import {useState} from "react";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
 import './styles.css';
 
 

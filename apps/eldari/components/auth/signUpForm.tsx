@@ -43,7 +43,7 @@ export default function SignUpForm() {
       return;
     }
 
-    await signUpWithEmail(signUpEmail, signUpPassword).then(() => {router.reload()})
+    await signUpWithEmail(signUpEmail, signUpPassword).then(() => {router.push('/')})
     resetFormFields()
   }
 
