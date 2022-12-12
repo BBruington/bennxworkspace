@@ -1,7 +1,7 @@
 import { signUpWithEmail, db, getCurrentUser } from "../../../../libs/firebase/firebase";
 import { useState, useEffect } from "react";
-import {useRouter} from "next/router";
-import {collection, addDoc} from "firebase/firestore";
+import { useRouter } from "next/router";
+import { collection, addDoc } from "firebase/firestore";
 
 
 const defaultSignUpFields = {
@@ -16,7 +16,7 @@ export default function SignUpForm() {
   const [formFields, setFormFields] = useState(defaultSignUpFields);
   const {confirmPassword, signUpPassword, signUpEmail} = formFields;
   const router = useRouter();
-  
+
   useEffect(()=>{
     const handleGetUser = async () => {
       const currentUser = await getCurrentUser();
@@ -44,7 +44,7 @@ export default function SignUpForm() {
     }
 
     await signUpWithEmail(signUpEmail, signUpPassword).then(() => {router.reload()})
-    resetFormFields();
+    resetFormFields()
   }
 
   const handleChange = (event) => {

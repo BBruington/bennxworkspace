@@ -36,9 +36,7 @@ export default function SignInForm() {
     e.preventDefault();
 
     const signInUser = await signInWithEmail(email, password).then(() => {router.reload()})
-
-    resetFormFields()
- 
+    resetFormFields() 
   }
 
   const handleChange = (event) => {
