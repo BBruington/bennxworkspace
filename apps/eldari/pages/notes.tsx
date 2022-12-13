@@ -13,11 +13,12 @@ export default function Notes() {
   useEffect(() => {
     const getNotes = async () => {
       const currentUser = await getCurrentUser();  
-      const data = await getDocs(notesCollectionRef)  
+      const data = await getDocs(notesCollectionRef)   
       const totalNotesData = data.docs.map((doc) => ({...doc.data(), id: doc.id})) 
-      const notesForEmailData = totalNotesData.filter((note) => note.email.toLowerCase() === currentUser.email.toLowerCase()) 
-      setEmailNotes(notesForEmailData)    
-      console.log("data", data) 
+      const notesForEmailData = totalNotesData.filter((note) => note.id === currentUser.uid) 
+      setEmailNotes(notesForEmailData)       
+      console.log("currentuser", currentUser)
+      console.log("data", data)  
       console.log("noteData", totalNotesData)
       console.log("notesForEmail", notesForEmailData)    
       console.log("emailNotes", emailNotes)   
@@ -62,7 +63,7 @@ export default function Notes() {
   return (
     <>
       <div className="flex justify-start">
-          <NoteSideBar 
+          {/* <NoteSideBar 
           emailNotes={emailNotes} 
           addNote={addNote} 
           deleteNote={deleteNote} 
@@ -74,9 +75,8 @@ export default function Notes() {
           <NoteMain 
           activeNote={getActiveNote()}
           updateNote={updateNote}
-          editMode={editMode}
-          
-          />
+          editMode={editMode}          
+          /> */}
       </div>
     </>
   )
