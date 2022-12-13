@@ -10,7 +10,7 @@ export default function NoteSideBar(props) {
     setEditMode(!editMode)
   }
 
-  const {notes, addNote, deleteNote, activeNote, setActiveNote, setEditMode, editMode} = props
+  const {emailNotes, addNote, deleteNote, activeNote, setActiveNote, setEditMode, editMode} = props
 
   return (
     <>
@@ -23,7 +23,7 @@ export default function NoteSideBar(props) {
           </div>
         </div>
         <div className="app-sidebar-notes">
-          {notes.map((note) => (
+          {emailNotes[0].notes && (emailNotes[0].notes.map((note) => (
             <div key={note.id} className="p-4 cursor-pointer hover:bg-gray-200" onClick={() => handleNoteOnClick(note)}>
               <div className="flex justify-between">
                 <div>
@@ -41,7 +41,7 @@ export default function NoteSideBar(props) {
                   </div>
               </div>
             </div>
-          ))}
+          )))}
         </div>
 
       </div>
