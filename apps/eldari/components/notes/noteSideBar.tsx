@@ -30,10 +30,11 @@ export default function NoteSideBar(props) {
                   <strong>{note.title}</strong> 
                   <p className="">{note.body && note.body.substr(0, 50) + '...'}</p>
 
-                  <small className="font-light block">last modified: {new Date(note.lastModified).toLocaleDateString("en-US", {
+                  <small className="font-light block">last modified: {new Date(note.lastModified.seconds * 1000).toLocaleDateString("en-US", {
                     hour: "2-digit",
                     minute: "2-digit",
-                  })}</small>
+                  })}
+                  </small>
                 </div>
                   <div className="mt-2">
                     <button onClick={() => deleteNote(note.id)} className="text-orange-700 hover:text-orange-500 font-bold">Delete</button>
