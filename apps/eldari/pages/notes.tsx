@@ -32,7 +32,7 @@ export default function Notes() {
       id: uuid(),
       title: "Untitled Note",
       body: "",
-      lastModified: Date.now(),
+      lastModified: {seconds: Date.now()/1000,}
     };
 
     setNotes([newNote, ...notes])
