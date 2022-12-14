@@ -12,10 +12,10 @@ export default function Notes() {
 
   useEffect(() => {
     const getNotes = async () => {
-      const currentUser = await getCurrentUser();  
+      const currentUser = await getCurrentUser();   
       const data = await getDocs(notesCollectionRef)   
       const totalNotesData = data.docs.map((doc) => ({...doc.data(), id: doc.id})) 
-      const notesForEmailData = totalNotesData.filter((note) => note.id === currentUser.uid) 
+      const notesForEmailData = totalNotesData.filter((note) => note.email.toLowerCase() === currentUser.email.toLowerCase())   
       setEmailNotes(notesForEmailData)       
       console.log("currentuser", currentUser)
       console.log("data", data)  
@@ -28,19 +28,23 @@ export default function Notes() {
   },[]) 
 
   const deleteNote = (idToDelete) => {
-    setEmailNotes(emailNotes[0].filter((note) => note.id !== idToDelete));
+    setEmailNotes(emailNotes[0]?.filter((note) => note.id !== idToDelete));
   }
 
   const addNote = () => {
 
     const newNote = {
-      notes: [{
       title: "Untitled Note",
       body: "",
-      lastModified: {seconds: Date.now()/1000,}}]
+      id: uuid(),
+      lastModified: {
+        seconds: Date.now()/1000,
+        miliseconds: Date.now()
+    }
     };
+    const addedNote = emailNotes.notes?.push(newNote)
 
-    setEmailNotes([newNote, ...emailNotes])
+    setEmailNotes(addedNote)
     console.log("emailnotes", emailNotes)
   }
 
@@ -56,14 +60,14 @@ export default function Notes() {
   }
 
   const getActiveNote = () => {
-
-    return emailNotes.find((note) => note.id === activeNote)
+    const activeNoteListener = emailNotes[0]?.notes.find((note) => note.id === activeNote);
+    return activeNoteListener
   }
 
   return (
     <>
       <div className="flex justify-start">
-          {/* <NoteSideBar 
+          <NoteSideBar 
           emailNotes={emailNotes} 
           addNote={addNote} 
           deleteNote={deleteNote} 
@@ -76,7 +80,7 @@ export default function Notes() {
           activeNote={getActiveNote()}
           updateNote={updateNote}
           editMode={editMode}          
-          /> */}
+          />
       </div>
     </>
   )
