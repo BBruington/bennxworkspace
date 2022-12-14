@@ -53,6 +53,15 @@
     "combat": "combat details",
     "npcs": "npcs are here",
     "roleplay": "roleplay details"
+    },
+    { 
+    "session": 7, 
+    "description": "description 4", 
+    "intro": "intro 4", 
+    "title": "Saving an Alchemist with Blood / the Aftermath",     
+    "combat": "combat details",
+    "npcs": "npcs are here",
+    "roleplay": "roleplay details"
     }
   ]  
 }

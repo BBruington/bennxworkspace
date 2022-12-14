@@ -23,7 +23,7 @@ export default function NoteSideBar(props) {
           </div>
         </div>
         <div className="app-sidebar-notes">
-          {emailNotes[0]?.notes && (emailNotes[0].notes.map((note) => (
+          {emailNotes && (emailNotes[0].notes.map((note) => (
             <div key={note.id} className="p-4 cursor-pointer hover:bg-gray-200" onClick={() => handleNoteOnClick(note)}>
               <div className="flex justify-between">
                 <div>
