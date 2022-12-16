@@ -19,14 +19,14 @@ export default function Notes() {
       if(data) {
         const currentUser = await getCurrentUser();   
         const notesForEmailData = data.filter((note) => note.email.toLowerCase() === currentUser.email.toLowerCase())
-        setEmailNotes(notesForEmailData)
+        setEmailNotes(notesForEmailData) 
       }
       console.log("data", data)  
       console.log("emailNotes", emailNotes)   
     }
 
     getNotes();
-  },[]) 
+  },[data]) 
 
   // const deleteNote = (idToDelete) => {
   //   setEmailNotes(emailNotes[0]?.filter((note) => note.id !== idToDelete));
@@ -51,14 +51,16 @@ export default function Notes() {
    }
 
   const updateNote = (updatedNote) => {
-    const updatedNotesArray = emailNotes.map((note) => {
-      if(note.id === activeNote) {
-        return updatedNote;
-      }
-      return note;
-    })
-
-    setEmailNotes(updatedNotesArray)
+    if(emailNotes[0]) {
+      const updatedNotesArray = emailNotes[0].notes.map((note) => {
+        if(note.id === activeNote) {
+          return updatedNote;
+        }
+        return note;
+      })
+  
+      setEmailNotes(updatedNotesArray)
+    }
   }
 
   const getActiveNote = () => {

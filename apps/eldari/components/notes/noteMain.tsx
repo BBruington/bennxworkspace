@@ -6,9 +6,13 @@ export default function NoteMain(props) {
 
   const editField = (key, value) => {
     updateNote({
-      ...activeNote,
-      [key]: value,
-      lastModified: {seconds: Date.now()/1000}
+      notes:[
+        {
+          ...activeNote,
+        [key]: value,
+        lastModified: {seconds: Date.now()/1000}
+
+      }]
     })
   }
 
