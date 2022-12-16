@@ -17,13 +17,13 @@ export default function NoteSideBar(props) {
       <div className="w-2/6 overflow-auto border-r-2 border-r-gray-200 border-b-2 h-90v">
         <div className="flex justify-between p-4">
           <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-2xl lg:text-3xl m-0">Notes</h1>
-          <div>
+          <div className="sm:ml-6">
             <button onClick={handleEditMode} className="text-green-700 hover:text-green-500 font-bold mr-5">Edit Note</button>
             <button onClick={addNote} className="text-teal-600 hover:text-teal-400 font-bold">Add Note</button>
           </div>
         </div>
         <div className="app-sidebar-notes">
-          {emailNotes && (emailNotes[0].notes.map((note) => (
+          {emailNotes[0] && (emailNotes[0].notes.map((note) => (
             <div key={note.id} className="p-4 cursor-pointer hover:bg-gray-200" onClick={() => handleNoteOnClick(note)}>
               <div className="flex justify-between">
                 <div>
