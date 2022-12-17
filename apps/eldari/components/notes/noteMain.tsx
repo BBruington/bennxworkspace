@@ -2,7 +2,7 @@ import ReactMarkdown from "react-markdown"
 
 export default function NoteMain(props) {
 
-  const {activeNote, updateNote, editMode, emailNotes} = props
+  const {activeNote, updateNote, editMode} = props
 
   const editField = (key, value) => {
     updateNote({

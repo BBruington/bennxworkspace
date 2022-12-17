@@ -94,7 +94,6 @@ export default function Notes() {
           <NoteMain 
           activeNote={getActiveNote()}
           updateNote={updateNote}
-          emailNotes={emailNotes} 
           editMode={editMode}          
           />
       </div>
