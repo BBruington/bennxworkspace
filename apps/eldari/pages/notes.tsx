@@ -19,10 +19,10 @@ export default function Notes() {
       if(data) {
         const currentUser = await getCurrentUser();   
         const notesForEmailData = data.filter((note) => note.email.toLowerCase() === currentUser.email.toLowerCase())
-        setEmailNotes(notesForEmailData) 
+        setEmailNotes(notesForEmailData)  
       }
       console.log("data", data)  
-      console.log("emailNotes", emailNotes)   
+      console.log("emailNotes", emailNotes)    
     }
 
     getNotes();
@@ -52,14 +52,21 @@ export default function Notes() {
 
   const updateNote = (updatedNote) => {
     if(emailNotes[0]) {
-      const updatedNotesArray = emailNotes[0].notes.map((note) => {
+      const updatedNotesArray = [{
+        email: emailNotes[0].email,
+        id: emailNotes[0].id,
+        notes:
+        emailNotes[0].notes.map((note) => {
         if(note.id === activeNote) {
           return updatedNote;
         }
         return note;
-      })
+      })}]
   
       setEmailNotes(updatedNotesArray)
+
+      console.log("updatednote", updatedNote)
+      console.log("emailnotes", emailNotes)
     }
   }
 
@@ -87,6 +94,7 @@ export default function Notes() {
           <NoteMain 
           activeNote={getActiveNote()}
           updateNote={updateNote}
+          emailNotes={emailNotes} 
           editMode={editMode}          
           />
       </div>

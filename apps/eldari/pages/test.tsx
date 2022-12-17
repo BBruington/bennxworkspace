@@ -1,29 +1,29 @@
 import { useEffect, useState } from "react";
-import { notesCollectionRef } from "../../../libs/firebase/firebase";
-import { getDocs } from "firebase/firestore";
-
+import { notesCollectionRef} from "../../../libs/firebase/firebase";
+import { getDocs,  } from "firebase/firestore";
+import {ref, set, getDatabase} from "firebase/database"
 export default function Test() {
-
-  const [notes, setNotes] = useState([]);
-
-  useEffect(() => {
-    const getNotes = async () => {
-      const data = await getDocs(notesCollectionRef)
-      setNotes(data.docs.map((doc) => ({...doc.data(), id: doc.id})))
-      console.log("data", data)
-      console.log("notes", notes)
-    }
-
-    getNotes();
-  },[]) 
+  async function writeUserData() {
+    const db = getDatabase()
+    // const data = await getDocs(notesCollectionRef)   
+    // const totalNotesData = data.docs.map((doc) => ({...doc.data(), id: doc.id}))
+    set(ref(db, 'user notes' + "someid"), {
+      email: "bibruington@gmail.com",
+      notes: [
+      {
+        body:"this is the note",
+        id:"cool new id",
+        lastModified:Date.now(),
+        title:"this is a title"
+      }
+    ]
+    });
+    console.log("CLICK")
+  }
 
   return (
     <div>
-      {notes[0] ? (
-        <div>hi {notes[0].notes[0].title} {notes[0].notes[0].body}</div>)
-        :
-        (<div>not working</div>
-      )}
+      <button onClick={writeUserData}>me button</button>
     </div>
   )
 }
