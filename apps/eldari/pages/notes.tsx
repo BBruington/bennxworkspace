@@ -20,9 +20,7 @@ export default function Notes() {
         const currentUser = await getCurrentUser();   
         const notesForEmailData = data.filter((note) => note.email.toLowerCase() === currentUser.email.toLowerCase())
         setEmailNotes(notesForEmailData)  
-      }
-      console.log("data", data)  
-      console.log("emailNotes", emailNotes)    
+      }  
     }
 
     getNotes();
@@ -64,9 +62,6 @@ export default function Notes() {
       })}]
   
       setEmailNotes(updatedNotesArray)
-
-      console.log("updatednote", updatedNote)
-      console.log("emailnotes", emailNotes)
     }
   }
 

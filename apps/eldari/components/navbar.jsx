@@ -10,7 +10,6 @@ const NavBar = () => {
 
   const router = useRouter();
   const [users, setUsers] = useState({});  
-
   useEffect(()=>{
     const handleGetUser = async () => {
       const currentUser = await getCurrentUser();
@@ -24,15 +23,6 @@ const NavBar = () => {
 const handleUserInfo = () => {
   console.log(users)
 }
-
-  // useEffect(() => {
-  //   const getUsers = async () => {
-  //     const data = await getDocs(usersCollectionRef)
-  //     setUsers(data.docs.map((doc) => ({...doc.data(), id: doc.id})))
-  //   }
-
-  //   getUsers();
-  // },[]) 
 
   const pageLinks = [
     {name: 'Locations'},
@@ -81,7 +71,7 @@ const handleUserInfo = () => {
           </li>)
           }
           {
-            users.email&& (
+            users.email && (
             <li className="hover:text-cyan-500 transition-colors cursor-pointer">
               {users.email}
             </li>
