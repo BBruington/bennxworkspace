@@ -146,7 +146,7 @@ export default function SessionInfo({sess}) {
                     <h2 className='flex justify-center text-lg font-medium m-2'>{title}</h2>
                     <div className='flex justify-center m-1 font-medium'>{intro}</div>
                     <div className="h-full p-1 rounded-lg border-2 border-dashed border-gray-200 "> 
-                      <div className='m-2 p-1'>{description}</div>
+                      <div className='m-2 p-1 '>{description}</div>
                     </div>
                   </>
                 )}

@@ -44,35 +44,35 @@ const handleUserInfo = () => {
 
   return (
     <div className="shadow bg-white ">
-      <button className="ml-4" onClick={handleUserInfo}>user info</button>
+      <button className="ml-4  hover:text-teal-400" onClick={handleUserInfo}>user info</button>
       <div className="h-17 my-3 pb-3 mx-auto px-5 flex items-center justify-between">
-          <a className="text-2xl hover:text-cyan-500 transition-colors cursor-pointer" onClick={handleOnClickHome}>
+          <a className="text-2xl  transition-colors cursor-pointer" onClick={handleOnClickHome}>
             <Image src='/icons/favicon_io/favicon-32x32.png' height={32} width={32} alt='github icon'/>
           </a>
           
           <ul className="flex items-center gap-5">
           {pageLinks.map((links) => ( 
             <li key={links.name}>
-              <Link href={`/${links.name.toLowerCase()}`} className="hover:text-cyan-500 transition-colors cursor-pointer">
+              <Link href={`/${links.name.toLowerCase()}`} className="ml-2 hover:text-teal-400 transition-colors cursor-pointer">
                 {links.name}
               </Link>
             </li>
           ))}
           { users.email? (
-            <li onClick={handleLogOut} className="hover:text-cyan-500 transition-colors cursor-pointer">
+            <li onClick={handleLogOut} className="ml-2 hover:text-teal-400 transition-colors cursor-pointer">
                 Log out
             </li>
           )
           :
           (<li>
-            <Link href={`/login`} className="hover:text-cyan-500 transition-colors cursor-pointer">
+            <Link href={`/login`} className="ml-2 hover:text-teal-400 transition-colors cursor-pointer">
               Login
             </Link>
           </li>)
           }
           {
             users.email && (
-            <li className="hover:text-cyan-500 transition-colors cursor-pointer">
+            <li className="ml-2 hover:text-teal-400 transition-colors cursor-pointer">
               {users.email}
             </li>
             )
