@@ -26,9 +26,16 @@ export default function Notes() {
     getNotes();
   },[data]) 
 
-  // const deleteNote = (idToDelete) => {
-  //   setEmailNotes(emailNotes[0]?.filter((note) => note.id !== idToDelete));
-  // }
+  const deleteNote = (idToDelete) => {
+    if(emailNotes[0]) {
+      const updatedNotesArray = [{
+        email: emailNotes[0].email,
+        id: emailNotes[0].id,
+        notes:
+        emailNotes[0].notes.filter((note) => {return note.id !== idToDelete})}]
+        setEmailNotes(updatedNotesArray)
+    }
+  }
 
   const addNote = () => {
 
@@ -80,7 +87,7 @@ export default function Notes() {
           <NoteSideBar 
           emailNotes={emailNotes} 
           addNote={addNote} 
-          //deleteNote={deleteNote} 
+          deleteNote={deleteNote} 
           activeNote={activeNote}
           setActiveNote={setActiveNote}
           editMode={editMode}
