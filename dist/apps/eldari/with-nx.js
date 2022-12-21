@@ -16,7 +16,7 @@ function regexEqual(x, y) {
  */
 function getWithNxContext() {
 return {
-workspaceRoot: 'C:\Users\barry\Downloads\code\NX\bennxworkspace',
+workspaceRoot: '/vercel/path0',
 libsDir: 'libs'
 }
 }
