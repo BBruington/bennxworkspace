@@ -1,3 +1,4 @@
+import ReactMarkdown from "react-markdown"
 
 
 export default function NoteSideBar(props) {
@@ -28,7 +29,7 @@ export default function NoteSideBar(props) {
               <div className="flex justify-between">
                 <div>
                   <strong>{note.title}</strong> 
-                  <p className="">{note.body && note.body.substr(0, 50) + '...'}</p>
+                  <ReactMarkdown className="">{note.body && note.body.substr(0, 50) + '...'}</ReactMarkdown>
 
                   <small className="font-light block">last modified: {new Date(note.lastModified.seconds * 1000).toLocaleDateString("en-US", {
                     hour: "2-digit",
