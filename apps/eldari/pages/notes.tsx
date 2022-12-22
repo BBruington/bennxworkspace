@@ -13,11 +13,12 @@ export default function Notes() {
   const [addNoteToggle, setAddNoteToggle] = useState(false);
   const [editMode,setEditMode] = useState(false);
   const { data, error, isLoading } = useSWR('/api/getUserNotesData', fetcher);
+
   const defaultEmailNotes = [{
     email:'',
     id:uuid(),
     notes:[{
-      title:'Untitled Note',
+      title:'Remember to sign in to save your notes',
       body:'',
       id:uuid(),
       lastModified:{
@@ -81,7 +82,7 @@ export default function Notes() {
       lastModified: {
         seconds: Date.now()/1000,
         milliseconds: Date.now()
-    }
+      }
     };
     const addedNote = emailNotes;
     addedNote[0].notes.unshift(newNote)
