@@ -73,7 +73,7 @@ export default function Notes() {
     }
   }
 
-  const addNote = () => {
+  const addNote = async () => {
 
     const newNote = {
       title: "Untitled Note",
@@ -89,6 +89,9 @@ export default function Notes() {
 
     setEmailNotes(addedNote)
     setAddNoteToggle(!addNoteToggle)
+    
+    const noteDoc = doc(db, "user notes", emailNotes[0].id)
+    await updateDoc(noteDoc, addedNote[0])
    }
 
   const updateNote = async (updatedNote) => {
