@@ -8,7 +8,10 @@ export default function NoteMain(props) {
     updateNote({
           ...activeNote,
         [key]: value,
-        lastModified: {seconds: Date.now()/1000}
+        lastModified: {
+          seconds: Date.now()/1000,
+          milliseconds: Date.now()
+        }
     })
   }
 
