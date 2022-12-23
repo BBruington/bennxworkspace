@@ -40,7 +40,7 @@ export default function NoteMain(props) {
         <>
           <div className="m-4 mt-7 bg-gray-100 h-80v">
 
-          <h1 className="p-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-2xl lg:text-3xl m-0">Click on an Existing Note or Add a New One</h1>
+          <h1 className="p-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-2xl lg:text-3xl m-0">Click on an existing note or add a new one</h1>
 
           <ReactMarkdown className="p-4">This is where your note would appear</ReactMarkdown>
 
