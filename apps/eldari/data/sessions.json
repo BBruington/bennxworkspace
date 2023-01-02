@@ -38,8 +38,8 @@
     },
     { 
     "session": 5, 
-    "description": "description 4", 
-    "intro": "intro 4", 
+    "description": "description 5", 
+    "intro": "intro 5", 
     "title": "Making an Oath",     
     "combat": "combat details",
     "npcs": "npcs are here",
@@ -47,8 +47,8 @@
     },
     { 
     "session": 6, 
-    "description": "description 4", 
-    "intro": "intro 4", 
+    "description": "description 6", 
+    "intro": "intro 6", 
     "title": "Clearing an Infestation",     
     "combat": "combat details",
     "npcs": "npcs are here",
@@ -56,8 +56,8 @@
     },
     { 
     "session": 7, 
-    "description": "description 4", 
-    "intro": "intro 4", 
+    "description": "description 7", 
+    "intro": "intro 7", 
     "title": "Saving an Alchemist with Blood / the Aftermath",     
     "combat": "combat details",
     "npcs": "npcs are here",
@@ -67,6 +67,15 @@
     "session": 8, 
     "description": "description 8", 
     "intro": "intro 8", 
+    "title": "Celebrations for a job well done",     
+    "combat": "combat details",
+    "npcs": "npcs are here",
+    "roleplay": "roleplay details"
+    },
+    { 
+    "session": 9, 
+    "description": "description 9", 
+    "intro": "intro 9", 
     "title": "Meeting with the Lord of the Land",     
     "combat": "combat details",
     "npcs": "npcs are here",
