@@ -62,6 +62,15 @@
     "combat": "combat details",
     "npcs": "npcs are here",
     "roleplay": "roleplay details"
+    },
+    { 
+    "session": 8, 
+    "description": "description 8", 
+    "intro": "intro 8", 
+    "title": "Meeting with the Lord of the Land",     
+    "combat": "combat details",
+    "npcs": "npcs are here",
+    "roleplay": "roleplay details"
     }
   ]  
 }
