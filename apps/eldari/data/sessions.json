@@ -80,6 +80,15 @@
     "combat": "combat details",
     "npcs": "npcs are here",
     "roleplay": "roleplay details"
+    },
+    { 
+    "session": 10, 
+    "description": "description 10", 
+    "intro": "intro 10", 
+    "title": "The Hunt part 1",    
+    "combat": "combat details",
+    "npcs": "npcs are here",
+    "roleplay": "roleplay details"
     }
   ]  
 }
