@@ -89,6 +89,15 @@
     "combat": "combat details",
     "npcs": "npcs are here",
     "roleplay": "roleplay details"
+    },
+    { 
+    "session": 11, 
+    "description": "description 11", 
+    "intro": "intro 11", 
+    "title": "The Hunt part 2",    
+    "combat": "combat details",
+    "npcs": "npcs are here",
+    "roleplay": "roleplay details"
     }
   ]  
 }
