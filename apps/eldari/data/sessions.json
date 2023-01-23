@@ -98,6 +98,15 @@
     "combat": "combat details",
     "npcs": "npcs are here",
     "roleplay": "roleplay details"
+    },
+    { 
+    "session": 12, 
+    "description": "description 12", 
+    "intro": "intro 12", 
+    "title": "A shift in the force",    
+    "combat": "combat details",
+    "npcs": "npcs are here",
+    "roleplay": "roleplay details"
     }
   ]  
 }

@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link';
 import { sanityClient, urlFor } from '../utils/sanity'
@@ -7,7 +6,7 @@ import { Post } from "../utils/typings";
 
 interface Props {
   posts: [Post];
-}export function Index(props: Props) {
+} export function Index(props: Props) {
   const { posts } = props;
 
   return (
@@ -31,7 +30,9 @@ interface Props {
         </div>  
       </div>
       </div>
-        {/* We've used 3xl here, but feel free to try other max-widths based on your needs */}
+
+        {/* this is where the area for the posts starts */}
+
       <div className="max-w-7x1 mx-auto">
         {/* posts */}
         <div className='p-3 gap-3 grid grid-cols-1 sm:grid-cols-2 md:gap-6 md:p-6 lg:grid-cols-3 '>
