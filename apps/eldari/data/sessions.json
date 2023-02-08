@@ -107,6 +107,15 @@
     "combat": "combat details",
     "npcs": "npcs are here",
     "roleplay": "roleplay details"
+    },
+    { 
+    "session": 13, 
+    "description": "description 13", 
+    "intro": "intro 13", 
+    "title": "The Chase",    
+    "combat": "combat details",
+    "npcs": "npcs are here",
+    "roleplay": "roleplay details"
     }
   ]  
 }
